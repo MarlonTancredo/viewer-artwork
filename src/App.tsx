@@ -27,9 +27,9 @@ const App = () => {
     const getData = async () => {
         const response = await fetch("https://openaccess-api.clevelandart.org/api/artworks/?limit=5");
         const data = await response.json();
-        setArtList(data.data.slice(0, 5));
+        setArtList(data.data);
         console.log(response);
-        console.log(data.data.slice(0, 5));
+        console.log(data.data);
     };
 
     useEffect(() => {
