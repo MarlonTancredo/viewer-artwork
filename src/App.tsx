@@ -9,13 +9,13 @@ type Art = {
 };
 
 const App = () => {
-    const [artList, setArtList] = useState<Art[]>([]);
+    const [artList, setArtList] = useState<Art[]>();
 
     const getData = async () => {
         const response = await fetch("https://openaccess-api.clevelandart.org/api/artworks");
         const data = await response.json();
         setArtList(data.data.slice(0, 5));
-        console.log(data.data);
+        console.log(response);
         console.log(data.data.slice(0, 5));
     };
 
@@ -26,7 +26,7 @@ const App = () => {
     return artList ? (
         <>
             <h1>Arts</h1>
-            {artList.map((art) => {
+            {artList?.map((art) => {
                 return (
                     <section key={art.id} style={{ width: "500px" }}>
                         <img src={art.images.web?.url} alt={art.title} style={{ width: "500px" }} />
