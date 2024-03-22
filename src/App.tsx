@@ -12,7 +12,7 @@ const App = () => {
     const [artList, setArtList] = useState<Art[]>([]);
 
     const getData = async () => {
-        const response = await fetch("https://openaccess-api.clevelandart.org/api/artworks/?artists=picasso");
+        const response = await fetch("https://openaccess-api.clevelandart.org/api/artworks");
         const data = await response.json();
         setArtList(data.data.slice(0, 5));
         console.log(data.data);
