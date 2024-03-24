@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-container {
+    width: 30vw;
+    border: black solid 1px;
+}
+
+.card-container__img {
+    width: 30vw;
+    height: 30vh;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 900px) {
+    .card-container {
+        width: 80vw;
+    }
+    .card-container__img {
+        width: 80vw;
+    }
+}

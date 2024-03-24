@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
+import "./App.css";
 
 type Creator = {
     biography: null;
@@ -50,27 +51,11 @@ const App = () => {
         !isLoading && (
             <>
                 <h1>Arts</h1>
-                <div
-                    style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: "1rem",
-                        justifyContent: "center",
-                        alignItems: "center",
-                    }}
-                >
+                <div className="container">
                     {data?.map((art: Art) => {
                         return (
-                            <section key={art.id} style={{ width: "20vw", border: "black solid 1px" }}>
-                                <img
-                                    src={art.images.web?.url}
-                                    alt={art.title}
-                                    style={{
-                                        width: "20vw",
-                                        height: "30vh",
-                                        objectFit: "cover",
-                                    }}
-                                />
+                            <section key={art.id} className="card-container">
+                                <img src={art.images.web?.url} alt={art.title} className="card-container__img" />
                                 <p>
                                     <strong>Title: </strong>
                                     {art.title}
