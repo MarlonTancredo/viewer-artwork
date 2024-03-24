@@ -24,8 +24,8 @@ type Art = {
 };
 
 const App = () => {
-    const [limit, setLimit] = useState(8);
-    const { ref, inView } = useInView({ threshold: 0 });
+    const [limit, setLimit] = useState(6);
+    const { ref, inView } = useInView({ threshold: 1 });
 
     const { data, isLoading, refetch } = useQuery({
         queryKey: ["items"],
@@ -42,7 +42,7 @@ const App = () => {
 
     useEffect(() => {
         if (inView) {
-            setLimit((limit) => (limit += 5));
+            setLimit((limit) => (limit += 3));
             refetch();
         }
     }, [inView]);
