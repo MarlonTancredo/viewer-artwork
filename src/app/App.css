@@ -19,9 +19,9 @@
 
 @media screen and (max-width: 900px) {
     .card-container {
-        width: 80vw;
+        width: 90vw;
     }
     .card-container__img {
-        width: 80vw;
+        width: 90vw;
     }
 }
