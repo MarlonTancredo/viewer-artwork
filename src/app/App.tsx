@@ -19,7 +19,6 @@ type Art = {
     title: string;
     creation_date: string;
     creators: Creator[];
-    description: string;
     images: { web?: { url: string; width: string; height: string; filesize: string; filename: string } };
 };
 
@@ -51,7 +50,15 @@ const App = () => {
         !isLoading && (
             <>
                 <h1>Arts</h1>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", justifyContent: "center" }}>
+                <div
+                    style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "1rem",
+                        justifyContent: "center",
+                        alignItems: "center",
+                    }}
+                >
                     {data?.map((art: Art) => {
                         return (
                             <section key={art.id} style={{ width: "20vw", border: "black solid 1px" }}>
@@ -86,9 +93,6 @@ const App = () => {
                                         </div>
                                     );
                                 })}
-                                <p>
-                                    <strong>Description:</strong> {art.description}
-                                </p>
                                 <br />
                             </section>
                         );
