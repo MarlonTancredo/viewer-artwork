@@ -4,20 +4,43 @@
     gap: 1rem;
     justify-content: center;
     align-items: center;
-    transition-duration: 4s;
+    align-items: stretch;
 }
 
 .card-container {
+    padding-bottom: 1vh;
     width: 30vw;
-    height: 60vh;
-    border: black solid 1px;
+    height: auto;
+}
+
+.card-container__shadow {
+    box-shadow:
+        0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .card-container__img {
     width: 30vw;
-    height: 30vh;
+    height: 40vh;
     object-fit: cover;
-    object-position: center;
+    object-position: top;
+}
+
+.fade-in {
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 1s;
+}
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @media screen and (max-width: 700px) {
