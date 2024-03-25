@@ -10,7 +10,7 @@ type Creator = {
     description: string;
     extent: null;
     id: number;
-    name_in_original_language: null;
+    name_in_original_language: null | string;
     qualifier: null;
     role: string;
 };
@@ -25,7 +25,7 @@ type Art = {
 
 const App = () => {
     const [limit, setLimit] = useState(6);
-    const { ref, inView } = useInView({ threshold: 1 });
+    const { ref, inView } = useInView({ threshold: 0.4 });
 
     const { data, isLoading, refetch } = useQuery({
         queryKey: ["items"],
@@ -33,7 +33,9 @@ const App = () => {
     });
 
     const getData = async () => {
-        const response = await fetch(`https://openaccess-api.clevelandart.org/api/artworks/?limit=${limit}`);
+        const response = await fetch(
+            `https://openaccess-api.clevelandart.org/api/artworks/?limit=${limit}&has_image=1`,
+        );
         const data = await response.json();
         console.log(response);
         console.log(data.data);
@@ -54,23 +56,19 @@ const App = () => {
                 <div className="container">
                     {data?.map((art: Art) => {
                         return (
-                            <section key={art.id} className="card-container">
+                            <section key={art.id} className="fade-in card-container card-container__shadow">
                                 <img src={art.images.web?.url} alt={art.title} className="card-container__img" />
                                 <p>
                                     <strong>Title: </strong>
                                     {art.title}
                                 </p>
+                                <p>
+                                    <strong>Creation date: </strong>
+                                    {art.creation_date}
+                                </p>
                                 {art.creators.map((creator) => {
                                     return (
                                         <div key={creator.id}>
-                                            <p>
-                                                <strong>Birth: </strong>
-                                                {creator.birth_year}
-                                            </p>
-                                            <p>
-                                                <strong>Death: </strong>
-                                                {creator.death_year}
-                                            </p>
                                             <p>
                                                 <strong>Creator: </strong>
                                                 {creator.description}
