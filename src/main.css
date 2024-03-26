@@ -3,6 +3,10 @@
     src: url("fonts/Roboto/Roboto-Regular.ttf") format("truetype");
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Roboto";
 }
