@@ -24,13 +24,8 @@ type Art = {
 };
 
 const App = () => {
-<<<<<<< HEAD
-    const [limit, setLimit] = useState(5);
-    const { ref, inView } = useInView({ threshold: 0 });
-=======
     const [limit, setLimit] = useState(6);
     const { ref, inView } = useInView({ threshold: 0.4 });
->>>>>>> 1f1546510149bd13095bc674e09788d729187b0d
 
     const { data, isLoading, refetch } = useQuery({
         queryKey: ["items"],
@@ -57,34 +52,36 @@ const App = () => {
     return (
         !isLoading && (
             <>
-                <h1>Arts</h1>
-                <div className="container">
-                    {data?.map((art: Art) => {
-                        return (
-                            <section key={art.id} className="fade-in card-container card-container__shadow">
-                                <img src={art.images.web?.url} alt={art.title} className="card-container__img" />
-                                <p>
-                                    <strong>Title: </strong>
-                                    {art.title}
-                                </p>
-                                <p>
-                                    <strong>Creation date: </strong>
-                                    {art.creation_date}
-                                </p>
-                                {art.creators.map((creator) => {
-                                    return (
-                                        <div key={creator.id}>
-                                            <p>
-                                                <strong>Creator: </strong>
-                                                {creator.description}
-                                            </p>
-                                        </div>
-                                    );
-                                })}
-                                <br />
-                            </section>
-                        );
-                    })}
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                    <h1>Arts</h1>
+                    <div className="card-container">
+                        {data?.map((art: Art) => {
+                            return (
+                                <section key={art.id} className="card card__shadow fade-in">
+                                    <img src={art.images.web?.url} alt={art.title} className="card__img" />
+                                    <p>
+                                        <strong>Title: </strong>
+                                        {art.title}
+                                    </p>
+                                    <p>
+                                        <strong>Creation date: </strong>
+                                        {art.creation_date}
+                                    </p>
+                                    {art.creators.map((creator) => {
+                                        return (
+                                            <div key={creator.id}>
+                                                <p>
+                                                    <strong>Creator: </strong>
+                                                    {creator.description}
+                                                </p>
+                                            </div>
+                                        );
+                                    })}
+                                    <br />
+                                </section>
+                            );
+                        })}
+                    </div>
                     <section>
                         <h1 ref={ref}>Loading...</h1>
                     </section>
