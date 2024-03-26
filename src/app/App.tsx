@@ -44,7 +44,7 @@ const App = () => {
 
     useEffect(() => {
         if (inView) {
-            setLimit((limit) => (limit += 3));
+            setLimit((limit) => (limit += 4));
             refetch();
         }
     }, [inView]);
@@ -52,7 +52,7 @@ const App = () => {
     return (
         !isLoading && (
             <>
-                <div style={{ display: "flex", flexDirection: "column" }}>
+                <div className="app-container">
                     <h1>Arts</h1>
                     <div className="card-container">
                         {data?.map((art: Art) => {
@@ -83,7 +83,9 @@ const App = () => {
                         })}
                     </div>
                     <section>
-                        <h1 ref={ref}>Loading...</h1>
+                        <div ref={ref}>
+                            <h1>Loading...</h1>
+                        </div>
                     </section>
                 </div>
             </>
