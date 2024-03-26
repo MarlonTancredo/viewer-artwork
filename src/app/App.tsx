@@ -24,7 +24,7 @@ type Art = {
 };
 
 const App = () => {
-    const [limit, setLimit] = useState(8);
+    const [limit, setLimit] = useState(5);
     const { ref, inView } = useInView({ threshold: 0 });
 
     const { data, isLoading, refetch } = useQuery({
@@ -82,10 +82,10 @@ const App = () => {
                             </section>
                         );
                     })}
+                    <section>
+                        <h1 ref={ref}>Loading...</h1>
+                    </section>
                 </div>
-                <section>
-                    <h1 ref={ref}>Loading...</h1>
-                </section>
             </>
         )
     );
