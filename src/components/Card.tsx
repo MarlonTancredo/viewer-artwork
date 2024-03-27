@@ -9,8 +9,8 @@ const Card = ({ data }: Data) => {
                     <section key={art.id} className="card card--shadow card--fade-in">
                         <img src={art.images.web?.url} alt={art.title} className="card__img" />
                         <p>
-                            <strong>Title: </strong>
-                            {art.title}
+                            <strong>{art.title} </strong>
+                            <hr />
                         </p>
                         <p>
                             <strong>Creation date: </strong>
