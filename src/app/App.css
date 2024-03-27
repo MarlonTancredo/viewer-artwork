@@ -7,13 +7,19 @@
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1.5rem;
     justify-content: center;
     align-items: stretch;
 }
 
 .card {
     width: 25vw;
+    transition: transform 1s;
+}
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.03);
 }
 
 .card__shadow {
