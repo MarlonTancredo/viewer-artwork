@@ -6,7 +6,7 @@ import Loading from "../components/Loading";
 import "./styles.css";
 
 const App = () => {
-    const [limit, setLimit] = useState(6);
+    const [limit, setLimit] = useState(8);
     const { ref, inView } = useInView({ threshold: 1 });
 
     const { data, status, error, isFetching, refetch } = useQuery({
