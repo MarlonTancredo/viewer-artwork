@@ -7,8 +7,15 @@
 }
 
 .card {
-    width: 25vw;
+    width: 20vw;
     transition: transform 1s;
+}
+
+.card__img {
+    width: 20vw;
+    height: 40vh;
+    object-fit: cover;
+    object-position: top;
 }
 
 .card:hover {
@@ -20,13 +27,6 @@
     box-shadow:
         0 4px 8px 0 rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.card__img {
-    width: 25vw;
-    height: 40vh;
-    object-fit: cover;
-    object-position: top;
 }
 
 .card--fade-in {
@@ -48,11 +48,11 @@
 
 @media screen and (max-width: 1700px) {
     .card {
-        width: 35vw;
+        width: 30vw;
         font-size: 1vw;
     }
     .card__img {
-        width: 35vw;
+        width: 30vw;
     }
 }
 
