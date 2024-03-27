@@ -1,12 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
-import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import Card from "../components/card/Card";
+import { useEffect, useState } from "react";
+import Card from "../components/Card";
 import "./App.css";
 
 const App = () => {
     const [limit, setLimit] = useState(6);
-    const { ref, inView } = useInView({ threshold: 0.4 });
+    const { ref, inView } = useInView({ threshold: 1 });
 
     const { data, status, error, isFetching, refetch } = useQuery({
         queryKey: ["items"],
@@ -16,9 +16,10 @@ const App = () => {
     const getData = async () => {
         try {
             const response = await fetch(
-                `https://openaccess-api.clevelandart.org/api/artworks/?limit=${limit}&has_image=1`,
+                `https://openaccess-api.clevelandart.org/api/artworks/?q=ocean&limit=${limit}&has_image=1`,
             );
             const data = await response.json();
+            console.log(data);
             return data.data;
         } catch (error) {
             console.log(error);
