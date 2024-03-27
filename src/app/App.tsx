@@ -2,11 +2,11 @@ import { useQuery } from "@tanstack/react-query";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
 import Card from "../components/Card";
-import "./App.css";
+import "./styles.css";
 
 const App = () => {
     const [limit, setLimit] = useState(6);
-    const { ref, inView } = useInView({ threshold: 1 });
+    const { ref, inView } = useInView({ threshold: 0.6 });
 
     const { data, status, error, isFetching, refetch } = useQuery({
         queryKey: ["items"],

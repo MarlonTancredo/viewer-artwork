@@ -1,4 +1,5 @@
 import { Art, Data } from "../types/data";
+import "./styles.css";
 
 const Card = ({ data }: Data) => {
     return (
