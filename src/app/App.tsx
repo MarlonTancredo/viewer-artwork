@@ -27,19 +27,21 @@ const App = () => {
     const [limit, setLimit] = useState(6);
     const { ref, inView } = useInView({ threshold: 0.4 });
 
-    const { data, isLoading, refetch } = useQuery({
+    const { data, status, error, isFetching, refetch } = useQuery({
         queryKey: ["items"],
         queryFn: () => getData(),
     });
 
     const getData = async () => {
-        const response = await fetch(
-            `https://openaccess-api.clevelandart.org/api/artworks/?limit=${limit}&has_image=1`,
-        );
-        const data = await response.json();
-        console.log(response);
-        console.log(data.data);
-        return data.data;
+        try {
+            const response = await fetch(
+                `https://openaccess-api.clevelandart.org/api/artworks/?limit=${limit}&has_image=1`,
+            );
+            const data = await response.json();
+            return data.data;
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     useEffect(() => {
@@ -49,47 +51,42 @@ const App = () => {
         }
     }, [inView]);
 
-    return (
-        !isLoading && (
-            <>
-                <div className="app-container">
-                    <h1>Arts</h1>
-                    <div className="card-container">
-                        {data?.map((art: Art) => {
-                            return (
-                                <section key={art.id} className="card card__shadow fade-in">
-                                    <img src={art.images.web?.url} alt={art.title} className="card__img" />
-                                    <p>
-                                        <strong>Title: </strong>
-                                        {art.title}
-                                    </p>
-                                    <p>
-                                        <strong>Creation date: </strong>
-                                        {art.creation_date}
-                                    </p>
-                                    {art.creators.map((creator) => {
-                                        return (
-                                            <div key={creator.id}>
-                                                <p>
-                                                    <strong>Creator: </strong>
-                                                    {creator.description}
-                                                </p>
-                                            </div>
-                                        );
-                                    })}
-                                    <br />
-                                </section>
-                            );
-                        })}
-                    </div>
-                    <section>
-                        <div ref={ref}>
-                            <h1>Loading...</h1>
-                        </div>
-                    </section>
-                </div>
-            </>
-        )
+    return status === "pending" ? (
+        <div>Loading...</div>
+    ) : status === "error" ? (
+        <div>{error.message}</div>
+    ) : (
+        <div className="app-container">
+            <div className="card-container">
+                {data?.map((art: Art) => {
+                    return (
+                        <section key={art.id} className="card card__shadow fade-in">
+                            <img src={art.images.web?.url} alt={art.title} className="card__img" />
+                            <p>
+                                <strong>Title: </strong>
+                                {art.title}
+                            </p>
+                            <p>
+                                <strong>Creation date: </strong>
+                                {art.creation_date}
+                            </p>
+                            {art.creators.map((creator) => {
+                                return (
+                                    <div key={creator.id}>
+                                        <p>
+                                            <strong>Creator: </strong>
+                                            {creator.description}
+                                        </p>
+                                    </div>
+                                );
+                            })}
+                            <div ref={ref}>{isFetching && "Loading..."}</div>
+                            <br />
+                        </section>
+                    );
+                })}
+            </div>
+        </div>
     );
 };
 
