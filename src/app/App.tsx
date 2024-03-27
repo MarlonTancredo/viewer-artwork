@@ -52,7 +52,9 @@ const App = () => {
     }, [inView]);
 
     return status === "pending" ? (
-        <div>Loading...</div>
+        <div>
+            <h1>Loading...</h1>
+        </div>
     ) : status === "error" ? (
         <div>{error.message}</div>
     ) : (
@@ -80,11 +82,13 @@ const App = () => {
                                     </div>
                                 );
                             })}
-                            <div ref={ref}>{isFetching && "Loading..."}</div>
                             <br />
                         </section>
                     );
                 })}
+            </div>
+            <div ref={ref}>
+                <h1>{isFetching && "Loading..."}</h1>
             </div>
         </div>
     );
