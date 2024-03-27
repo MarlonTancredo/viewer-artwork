@@ -35,11 +35,11 @@ const App = () => {
     }, [inView]);
 
     return status === "pending" ? (
-        <div>
+        <div className="app-container">
             <Loading />
         </div>
     ) : status === "error" ? (
-        <div>{error.message}</div>
+        <div className="app-container">{error.message}</div>
     ) : (
         <div className="app-container">
             <Card data={data} />
