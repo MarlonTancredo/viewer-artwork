@@ -52,9 +52,20 @@
     }
 }
 
+@media screen and (max-width: 1700px) {
+    .card {
+        width: 35vw;
+        font-size: 1vw;
+    }
+    .card__img {
+        width: 35vw;
+    }
+}
+
 @media screen and (max-width: 1400px) {
     .card {
         width: 35vw;
+        font-size: 1.4vw;
     }
     .card__img {
         width: 35vw;
@@ -64,6 +75,7 @@
 @media screen and (max-width: 1200px) {
     .card {
         width: 35vw;
+        font-size: 1.7vw;
     }
     .card__img {
         width: 35vw;
@@ -82,6 +94,7 @@
 @media screen and (max-width: 800px) {
     .card {
         width: 70vw;
+        font-size: 2.5vw;
     }
     .card__img {
         width: 70vw;
@@ -91,6 +104,7 @@
 @media screen and (max-width: 500px) {
     .card {
         width: 90vw;
+        font-size: 4vw;
     }
     .card__img {
         width: 90vw;
