@@ -43,9 +43,7 @@ const App = () => {
     ) : (
         <div className="app-container">
             <Card data={data} />
-            <div ref={ref}>
-                <h1>{isFetching && <Loading />}</h1>
-            </div>
+            <div ref={ref}>{isFetching && <Loading />}</div>
         </div>
     );
 };
