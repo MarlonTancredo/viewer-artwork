@@ -3,15 +3,20 @@ import "./styles.css";
 
 const Card = ({ data }: Data) => {
     return (
-        <div className="card-container">
+        <div
+            className="card-container"
+            onClick={() => {
+                console.log("Click");
+            }}
+        >
             {data?.map((art: Art) => {
                 return (
                     <section key={art.id} className="card card--shadow card--fade-in">
                         <img src={art.images.web?.url} alt={art.title} className="card__img" />
                         <p>
                             <strong>{art.title} </strong>
-                            <hr />
                         </p>
+                        <hr />
                         <p>
                             <strong>Creation date: </strong>
                             {art.creation_date}
