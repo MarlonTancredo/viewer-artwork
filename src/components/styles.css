@@ -56,20 +56,10 @@
     }
 }
 
-@media screen and (max-width: 1400px) {
-    .card {
-        width: 35vw;
-        font-size: 1.4vw;
-    }
-    .card__img {
-        width: 35vw;
-    }
-}
-
 @media screen and (max-width: 1200px) {
     .card {
         width: 35vw;
-        font-size: 1.7vw;
+        font-size: 1.4vw;
     }
     .card__img {
         width: 35vw;
