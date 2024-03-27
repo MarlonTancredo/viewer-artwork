@@ -6,6 +6,7 @@ type Art = {
     id: number;
     title: string;
     creation_date: string;
+    department: string;
     creators: Creator[];
     images: { web?: { url: string; width: string; height: string; filesize: string; filename: string } };
 };
