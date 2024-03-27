@@ -16,7 +16,7 @@
     transform: scale(1.03);
 }
 
-.card__shadow {
+.card--shadow {
     box-shadow:
         0 4px 8px 0 rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -29,7 +29,7 @@
     object-position: top;
 }
 
-.fade-in {
+.card--fade-in {
     opacity: 1;
     animation-name: fadeInOpacity;
     animation-iteration-count: 1;

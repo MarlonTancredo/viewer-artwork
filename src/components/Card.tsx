@@ -6,7 +6,7 @@ const Card = ({ data }: Data) => {
         <div className="card-container">
             {data?.map((art: Art) => {
                 return (
-                    <section key={art.id} className="card card__shadow fade-in">
+                    <section key={art.id} className="card card--shadow card--fade-in">
                         <img src={art.images.web?.url} alt={art.title} className="card__img" />
                         <p>
                             <strong>Title: </strong>
