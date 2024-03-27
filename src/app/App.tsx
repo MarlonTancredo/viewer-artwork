@@ -1,27 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
+import Card from "../components/card/Card";
 import "./App.css";
-
-type Creator = {
-    biography: null;
-    birth_year: string;
-    death_year: string;
-    description: string;
-    extent: null;
-    id: number;
-    name_in_original_language: null | string;
-    qualifier: null;
-    role: string;
-};
-
-type Art = {
-    id: number;
-    title: string;
-    creation_date: string;
-    creators: Creator[];
-    images: { web?: { url: string; width: string; height: string; filesize: string; filename: string } };
-};
 
 const App = () => {
     const [limit, setLimit] = useState(6);
@@ -59,34 +40,7 @@ const App = () => {
         <div>{error.message}</div>
     ) : (
         <div className="app-container">
-            <div className="card-container">
-                {data?.map((art: Art) => {
-                    return (
-                        <section key={art.id} className="card card__shadow fade-in">
-                            <img src={art.images.web?.url} alt={art.title} className="card__img" />
-                            <p>
-                                <strong>Title: </strong>
-                                {art.title}
-                            </p>
-                            <p>
-                                <strong>Creation date: </strong>
-                                {art.creation_date}
-                            </p>
-                            {art.creators.map((creator) => {
-                                return (
-                                    <div key={creator.id}>
-                                        <p>
-                                            <strong>Creator: </strong>
-                                            {creator.description}
-                                        </p>
-                                    </div>
-                                );
-                            })}
-                            <br />
-                        </section>
-                    );
-                })}
-            </div>
+            <Card data={data} />
             <div ref={ref}>
                 <h1>{isFetching && "Loading..."}</h1>
             </div>
