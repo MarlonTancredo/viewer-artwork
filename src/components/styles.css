@@ -22,30 +22,13 @@
     height: 3vh;
     outline: none;
     background-color: #f8f9fa;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
+    border-radius: 15px;
     border: none;
     border-inline: none;
 }
 
-.search-field__button {
-    width: auto;
-    height: 3vh;
-    font-size: 0.8vw;
-    background-color: #141115;
-    color: #f8f9fa;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    transition: background-color 1s;
-    border: none;
-}
-
 .search-field__input:hover {
     cursor: text;
-}
-.search-field__button:hover {
-    cursor: pointer;
-    background-color: #6c757d;
 }
 
 /* Card */

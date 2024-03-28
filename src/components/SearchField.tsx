@@ -6,7 +6,7 @@ type Handles = {
     handleSearchButton?: () => void;
 };
 
-const SearchField = ({ handleSearchInput, handleSearchButton, handleKeyDown }: Handles) => {
+const SearchField = ({ handleSearchInput, handleKeyDown }: Handles) => {
     return (
         <>
             <div className="search-field__container">
@@ -17,7 +17,7 @@ const SearchField = ({ handleSearchInput, handleSearchButton, handleKeyDown }: H
                     onChange={handleSearchInput}
                     onKeyDown={handleKeyDown}
                 ></input>
-                <input type="button" className="search-field__button" onClick={handleSearchButton} value="Search" />
+                {/* <input type="button" className="search-field__button" onClick={handleSearchButton} value="Search" /> */}
             </div>
         </>
     );
