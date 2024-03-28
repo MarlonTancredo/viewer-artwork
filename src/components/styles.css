@@ -19,12 +19,13 @@
 }
 
 .search-field__input {
+    padding-left: 1rem;
     width: 40vw;
-    height: 4.5vh;
+    height: 3rem;
     outline: none;
     background-color: #f8f9fa;
-    border-radius: 15px;
     border: none;
+    border-radius: 40px;
 }
 
 .search-field__input:hover {

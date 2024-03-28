@@ -3,7 +3,6 @@ import "./styles.css";
 type Handles = {
     handleKeyDown?: (e: { key: string }) => void;
     handleSearchInput?: (e: { target: { value: string } }) => void;
-    handleSearchButton?: () => void;
 };
 
 const SearchField = ({ handleSearchInput, handleKeyDown }: Handles) => {
@@ -13,11 +12,10 @@ const SearchField = ({ handleSearchInput, handleKeyDown }: Handles) => {
                 <input
                     className="search-field__input"
                     type="text"
-                    placeholder="Enter an Artwork..."
+                    placeholder="Search..."
                     onChange={handleSearchInput}
                     onKeyDown={handleKeyDown}
-                ></input>
-                {/* <input type="button" className="search-field__button" onClick={handleSearchButton} value="Search" /> */}
+                />
             </div>
         </>
     );
