@@ -36,7 +36,9 @@
     color: #f8f9fa;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    transition: background-color 1s;
+    transition:
+        background-color 1s,
+        border 1s;
 }
 
 .search-field__input:hover {
