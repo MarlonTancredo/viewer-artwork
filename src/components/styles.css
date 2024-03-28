@@ -1,4 +1,31 @@
-.card-container {
+.header__container {
+    display: flex;
+}
+
+.search-field__container {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 5vh;
+    width: 100vw;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-field__input {
+    width: 30vw;
+    height: 2.5vh;
+}
+
+.search-field__button {
+    width: 6vw;
+    height: 3vh;
+}
+
+.card__container {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
@@ -6,7 +33,7 @@
     align-items: stretch;
 }
 
-.card {
+.card__body {
     width: 20vw;
     transition: transform 1s;
 }
@@ -18,15 +45,15 @@
     object-position: top;
 }
 
-.card:hover {
+.card__body:hover {
     cursor: pointer;
     transform: scale(1.02);
 }
 
 .card--shadow {
     box-shadow:
-        0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        0 4px 8px 0 #00000033,
+        0 6px 20px 0 #00000030;
 }
 
 .card--fade-in {

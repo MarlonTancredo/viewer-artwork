@@ -3,6 +3,7 @@ import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
 import Card from "../components/Card";
 import Loading from "../components/Loading";
+import SearchField from "../components/SearchField";
 import "./styles.css";
 
 const App = () => {
@@ -40,41 +41,19 @@ const App = () => {
     };
 
     return status === "pending" ? (
-        <div className="app-container">
+        <div className="app__container">
             <Loading />
         </div>
     ) : status === "error" ? (
-        <div className="app-container">{error.message}</div>
+        <div className="app__container">{error.message}</div>
     ) : (
-        <div className="app-container">
-            <div>
-                <div
-                    style={{
-                        display: "flex",
-                        position: "fixed",
-                        top: "0",
-                        left: "0",
-                        zIndex: "1",
-                        height: "5vh",
-                        width: "100vw",
-                        backgroundColor: "white",
-                        justifyContent: "center",
-                        alignItems: "center",
-                    }}
-                >
-                    <input
-                        style={{ width: "30vw", height: "2vh" }}
-                        type="text"
-                        placeholder="Enter..."
-                        onChange={(e) => {
-                            setSearchInput(e.target.value);
-                        }}
-                    ></input>
-                    <button style={{ width: "6vw", height: "2.5vh" }} onClick={handleSearchButton}>
-                        Search
-                    </button>
-                </div>
-            </div>
+        <div className="app__container">
+            <SearchField
+                handleSearchInput={(e) => {
+                    setSearchInput(e.target.value);
+                }}
+                handleSearchButton={handleSearchButton}
+            />
             <Card data={data} />
             <div ref={ref}>{isFetching && <Loading />}</div>
         </div>
