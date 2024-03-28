@@ -46,20 +46,12 @@ const App = () => {
         setSearchInput(e.target.value);
     };
 
-    const handleSearchButton = () => {
-        refetch();
-    };
-
     if (data?.length === 0) {
         return (
             <>
                 <div className="app__container">
                     <Header>
-                        <SearchField
-                            handleSearchInput={handleSearchInput}
-                            handleSearchButton={handleSearchButton}
-                            handleKeyDown={handleKeyDown}
-                        />
+                        <SearchField handleSearchInput={handleSearchInput} handleKeyDown={handleKeyDown} />
                     </Header>
                     <h1>Artwork not found!</h1>
                 </div>
@@ -81,11 +73,7 @@ const App = () => {
         <>
             <div className="app__container">
                 <Header>
-                    <SearchField
-                        handleSearchInput={handleSearchInput}
-                        handleSearchButton={handleSearchButton}
-                        handleKeyDown={handleKeyDown}
-                    />
+                    <SearchField handleSearchInput={handleSearchInput} handleKeyDown={handleKeyDown} />
                 </Header>
                 <Card data={data} />
                 <div ref={ref}>{isFetching && <Loading />}</div>
