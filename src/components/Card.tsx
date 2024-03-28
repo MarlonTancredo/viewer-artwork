@@ -4,14 +4,14 @@ import "./styles.css";
 const Card = ({ data }: Data) => {
     return (
         <div
-            className="card-container"
+            className="card__container"
             onClick={() => {
                 console.log("Click");
             }}
         >
             {data?.map((art: Art) => {
                 return (
-                    <section key={art.id} className="card card--shadow card--fade-in">
+                    <section key={art.id} className="card__body card--shadow card--fade-in">
                         <img src={art.images.web?.url} alt={art.title} className="card__img" />
                         <p>
                             <strong>{art.title} </strong>
