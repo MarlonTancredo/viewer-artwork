@@ -16,13 +16,14 @@
 }
 
 .search-field__input {
-    width: 30vw;
-    height: 2.5vh;
+    width: 40vw;
+    height: 3vh;
 }
 
 .search-field__button {
-    width: 6vw;
-    height: 3vh;
+    width: auto;
+    height: 3.5vh;
+    font-size: 0.8vw;
 }
 
 .card__container {
@@ -74,6 +75,9 @@
 }
 
 @media screen and (max-width: 1700px) {
+    .search-field__button {
+        font-size: 1vw;
+    }
     .card__body {
         width: 30vw;
         font-size: 1vw;
@@ -84,6 +88,9 @@
 }
 
 @media screen and (max-width: 1200px) {
+    .search-field__button {
+        font-size: 1.4vw;
+    }
     .card__body {
         width: 35vw;
         font-size: 1.4vw;
@@ -94,6 +101,9 @@
 }
 
 @media screen and (max-width: 1000px) {
+    .search-field__button {
+        font-size: 1.6vw;
+    }
     .card__body {
         width: 35vw;
     }
@@ -103,6 +113,9 @@
 }
 
 @media screen and (max-width: 800px) {
+    .search-field__button {
+        font-size: 2.5vw;
+    }
     .card__body {
         width: 70vw;
         font-size: 2.5vw;
@@ -113,6 +126,9 @@
 }
 
 @media screen and (max-width: 500px) {
+    .search-field__button {
+        font-size: 4vw;
+    }
     .card__body {
         width: 90vw;
         font-size: 4vw;
