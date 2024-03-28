@@ -17,9 +17,7 @@ const SearchField = ({ handleSearchInput, handleSearchButton, handleKeyDown }: H
                     onChange={handleSearchInput}
                     onKeyDown={handleKeyDown}
                 ></input>
-                <button className="search-field__button" onClick={handleSearchButton}>
-                    Search
-                </button>
+                <input type="button" className="search-field__button" onClick={handleSearchButton} value="Search" />
             </div>
         </>
     );
