@@ -18,7 +18,6 @@ const App = () => {
                 `https://openaccess-api.clevelandart.org/api/artworks/?q=${searchInput}&limit=${limit}&has_image=1`,
             );
             const data = await response.json();
-            console.log(data);
             return data.data;
         } catch (error) {
             console.log(error);
@@ -50,6 +49,23 @@ const App = () => {
     const handleSearchButton = () => {
         refetch();
     };
+
+    if (data?.length === 0) {
+        return (
+            <>
+                <div className="app__container">
+                    <Header>
+                        <SearchField
+                            handleSearchInput={handleSearchInput}
+                            handleSearchButton={handleSearchButton}
+                            handleKeyDown={handleKeyDown}
+                        />
+                    </Header>
+                    <h1>Artwork not found!</h1>
+                </div>
+            </>
+        );
+    }
 
     return status === "pending" ? (
         <>
