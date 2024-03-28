@@ -13,7 +13,7 @@ const SearchField = ({ handleSearchInput, handleKeyDown }: Handles) => {
                 <input
                     className="search-field__input"
                     type="text"
-                    placeholder="Enter..."
+                    placeholder="Enter an Artwork..."
                     onChange={handleSearchInput}
                     onKeyDown={handleKeyDown}
                 ></input>

@@ -10,21 +10,20 @@
     top: 0;
     left: 0;
     z-index: 1;
-    height: 5vh;
+    height: 6vh;
     width: 100vw;
-    background-color: #ced4da;
+    background-color: #212529;
     justify-content: center;
     align-items: center;
 }
 
 .search-field__input {
     width: 40vw;
-    height: 3vh;
+    height: 3.5vh;
     outline: none;
     background-color: #f8f9fa;
     border-radius: 15px;
     border: none;
-    border-inline: none;
 }
 
 .search-field__input:hover {
