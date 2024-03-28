@@ -12,7 +12,7 @@
     z-index: 1;
     height: 5vh;
     width: 100vw;
-    background-color: #f8f9fa;
+    background-color: #ced4da;
     justify-content: center;
     align-items: center;
 }
@@ -20,25 +20,24 @@
 .search-field__input {
     width: 40vw;
     height: 3vh;
-    border: 1px solid #141115;
     outline: none;
     background-color: #f8f9fa;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
+    border: none;
+    border-inline: none;
 }
 
 .search-field__button {
     width: auto;
-    height: 3.4vh;
+    height: 3vh;
     font-size: 0.8vw;
     background-color: #141115;
-    border: 1px solid #141115;
     color: #f8f9fa;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    transition:
-        background-color 1s,
-        border 1s;
+    transition: background-color 1s;
+    border: none;
 }
 
 .search-field__input:hover {
@@ -47,7 +46,6 @@
 .search-field__button:hover {
     cursor: pointer;
     background-color: #6c757d;
-    border: 1px solid #6c757d;
 }
 
 /* Card */
