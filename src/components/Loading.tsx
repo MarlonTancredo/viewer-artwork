@@ -6,7 +6,15 @@ const override = {
 
 const Loading = () => {
     return (
-        <BeatLoader color={"#141115"} size={20} cssOverride={override} aria-label="Sync Loader" data-testid="loader" />
+        <>
+            <BeatLoader
+                color={"#141115"}
+                size={20}
+                cssOverride={override}
+                aria-label="Sync Loader"
+                data-testid="loader"
+            />
+        </>
     );
 };
 
