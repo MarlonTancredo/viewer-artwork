@@ -1,6 +1,7 @@
 /* Header */
 .header__container {
     display: flex;
+    margin-bottom: 5rem;
 }
 
 /* Search field */
@@ -10,7 +11,7 @@
     top: 0;
     left: 0;
     z-index: 1;
-    height: 6vh;
+    height: 8vh;
     width: 100vw;
     background-color: #212529;
     justify-content: center;
@@ -19,7 +20,7 @@
 
 .search-field__input {
     width: 40vw;
-    height: 3.5vh;
+    height: 4.5vh;
     outline: none;
     background-color: #f8f9fa;
     border-radius: 15px;
@@ -81,9 +82,6 @@
 
 /* Media queries */
 @media screen and (max-width: 1700px) {
-    .search-field__button {
-        font-size: 1vw;
-    }
     .card__body {
         width: 30vw;
         font-size: 1vw;
@@ -94,9 +92,6 @@
 }
 
 @media screen and (max-width: 1200px) {
-    .search-field__button {
-        font-size: 1.4vw;
-    }
     .card__body {
         width: 35vw;
         font-size: 1.4vw;
@@ -107,9 +102,6 @@
 }
 
 @media screen and (max-width: 1000px) {
-    .search-field__button {
-        font-size: 1.6vw;
-    }
     .card__body {
         width: 35vw;
     }
@@ -119,9 +111,6 @@
 }
 
 @media screen and (max-width: 800px) {
-    .search-field__button {
-        font-size: 2.5vw;
-    }
     .card__body {
         width: 70vw;
         font-size: 2.5vw;
@@ -132,9 +121,6 @@
 }
 
 @media screen and (max-width: 500px) {
-    .search-field__button {
-        font-size: 4vw;
-    }
     .card__body {
         width: 90vw;
         font-size: 4vw;
