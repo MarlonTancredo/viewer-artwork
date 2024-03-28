@@ -36,6 +36,10 @@ const App = () => {
         }
     }, [inView]);
 
+    const handleSearchInput = (e: { target: { value: string } }) => {
+        setSearchInput(e.target.value);
+    };
+
     const handleSearchButton = () => {
         refetch();
     };
@@ -48,12 +52,7 @@ const App = () => {
         <div className="app__container">{error.message}</div>
     ) : (
         <div className="app__container">
-            <SearchField
-                handleSearchInput={(e) => {
-                    setSearchInput(e.target.value);
-                }}
-                handleSearchButton={handleSearchButton}
-            />
+            <SearchField handleSearchInput={handleSearchInput} handleSearchButton={handleSearchButton} />
             <Card data={data} />
             <div ref={ref}>{isFetching && <Loading />}</div>
         </div>

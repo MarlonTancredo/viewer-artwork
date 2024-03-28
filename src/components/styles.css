@@ -74,7 +74,7 @@
 }
 
 @media screen and (max-width: 1700px) {
-    .card {
+    .card__body {
         width: 30vw;
         font-size: 1vw;
     }
@@ -84,7 +84,7 @@
 }
 
 @media screen and (max-width: 1200px) {
-    .card {
+    .card__body {
         width: 35vw;
         font-size: 1.4vw;
     }
@@ -94,7 +94,7 @@
 }
 
 @media screen and (max-width: 1000px) {
-    .card {
+    .card__body {
         width: 35vw;
     }
     .card__img {
@@ -103,7 +103,7 @@
 }
 
 @media screen and (max-width: 800px) {
-    .card {
+    .card__body {
         width: 70vw;
         font-size: 2.5vw;
     }
@@ -113,7 +113,7 @@
 }
 
 @media screen and (max-width: 500px) {
-    .card {
+    .card__body {
         width: 90vw;
         font-size: 4vw;
     }
