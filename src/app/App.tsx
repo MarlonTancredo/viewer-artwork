@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Card from "../components/Card";
 import Loading from "../components/Loading";
 import SearchField from "../components/SearchField";
+import Header from "../components/Header";
 import "./styles.css";
 
 const App = () => {
@@ -36,6 +37,12 @@ const App = () => {
         }
     }, [inView]);
 
+    const handleKeyDown = (e: { key: string }) => {
+        if (e.key === "Enter") {
+            refetch();
+        }
+    };
+
     const handleSearchInput = (e: { target: { value: string } }) => {
         setSearchInput(e.target.value);
     };
@@ -45,17 +52,29 @@ const App = () => {
     };
 
     return status === "pending" ? (
-        <div className="app__container">
-            <Loading />
-        </div>
+        <>
+            <div className="app__container">
+                <Loading />
+            </div>
+        </>
     ) : status === "error" ? (
-        <div className="app__container">{error.message}</div>
+        <>
+            <div className="app__container">{error.message}</div>
+        </>
     ) : (
-        <div className="app__container">
-            <SearchField handleSearchInput={handleSearchInput} handleSearchButton={handleSearchButton} />
-            <Card data={data} />
-            <div ref={ref}>{isFetching && <Loading />}</div>
-        </div>
+        <>
+            <div className="app__container">
+                <Header>
+                    <SearchField
+                        handleSearchInput={handleSearchInput}
+                        handleSearchButton={handleSearchButton}
+                        handleKeyDown={handleKeyDown}
+                    />
+                </Header>
+                <Card data={data} />
+                <div ref={ref}>{isFetching && <Loading />}</div>
+            </div>
+        </>
     );
 };
 
