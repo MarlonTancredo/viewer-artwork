@@ -1,7 +1,7 @@
 /* Header */
 .header__container {
     display: flex;
-    margin-bottom: 5rem;
+    height: 6rem;
 }
 
 /* Search field */
@@ -11,7 +11,7 @@
     top: 0;
     left: 0;
     z-index: 1;
-    height: 8vh;
+    height: 6rem;
     width: 100vw;
     background-color: #212529;
     justify-content: center;
@@ -43,7 +43,8 @@
 
 .card__body {
     width: 20vw;
-    transition: transform 1s;
+    transition: transform 0.5s;
+    border-radius: 20px;
 }
 
 .card__img {
@@ -51,11 +52,13 @@
     height: 40vh;
     object-fit: cover;
     object-position: top;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
 }
 
 .card__body:hover {
     cursor: pointer;
-    transform: scale(1.02);
+    transform: scale(1.01);
 }
 
 .card--shadow {

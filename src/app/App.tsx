@@ -8,7 +8,7 @@ import Header from "../components/Header";
 import "./styles.css";
 
 const App = () => {
-    const [limit, setLimit] = useState(6);
+    const [limit, setLimit] = useState(8);
     const [searchInput, setSearchInput] = useState("");
     const { ref, inView } = useInView({ threshold: 1 });
 
