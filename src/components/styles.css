@@ -43,8 +43,8 @@
 
 .card__body {
     width: 20vw;
-    transition: transform 0.5s;
     border-radius: 20px;
+    transition: all 0.6s;
 }
 
 .card__img {
@@ -58,7 +58,7 @@
 
 .card__body:hover {
     cursor: pointer;
-    transform: scale(1.01);
+    opacity: 80%;
 }
 
 .card--shadow {
