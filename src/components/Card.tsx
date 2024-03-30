@@ -17,38 +17,18 @@ const Card = ({ data }: Data) => {
                             <div
                                 style={{
                                     display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
+                                    flexDirection: "column",
+                                    alignItems: "right",
                                 }}
                             >
-                                <p id="title" style={{ color: "gray" }}>
-                                    {art.title}
-                                </p>
-                            </div>
-                            <div
-                                style={{
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                }}
-                            >
-                                <p>{art.department}</p>
-                                <p>{art.creation_date_latest}</p>
-                            </div>
-                            <div
-                                style={{
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                }}
-                            >
-                                {art.creators.map((creator) => {
-                                    return (
-                                        <div key={creator.id}>
-                                            <p>{creator.description}</p>
-                                        </div>
-                                    );
-                                })}
+                                <div id="title" style={{ color: "#141115", padding: "1rem" }}>
+                                    <div style={{ fontSize: "0.9rem", fontWeight: "bold", marginBottom: "0.8rem" }}>
+                                        {art.title}
+                                    </div>
+                                    <div style={{ fontSize: "0.8rem", color: "#6d6875" }}>
+                                        {art.department} {art.creation_date_latest}
+                                    </div>
+                                </div>
                             </div>
                         </section>
                     );
