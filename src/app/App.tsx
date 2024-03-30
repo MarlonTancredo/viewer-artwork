@@ -9,7 +9,7 @@ import "./styles.css";
 
 const App = () => {
     const [limit, setLimit] = useState(8);
-    const [searchInput, setSearchInput] = useState("");
+    const [searchInput, setSearchInput] = useState("ocean");
     const { ref, inView } = useInView({ threshold: 1 });
 
     const getData = async () => {
@@ -18,6 +18,7 @@ const App = () => {
                 `https://openaccess-api.clevelandart.org/api/artworks/?q=${searchInput}&limit=${limit}&has_image=1`,
             );
             const data = await response.json();
+            console.log(data);
             return data.data;
         } catch (error) {
             console.log(error);
