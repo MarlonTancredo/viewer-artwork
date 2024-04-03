@@ -9,10 +9,10 @@ type CardHandles = {
 const Card = ({ data, handleClick }: CardHandles) => {
     return (
         <>
-            <div className="card__container" onClick={handleClick}>
+            <div className="card__container">
                 {data?.map((art: Art) => {
                     return (
-                        <section key={art.id} className="card__body card--shadow card--fade-in">
+                        <section key={art.id} className="card__body card--shadow card--fade-in" onClick={handleClick}>
                             <img src={art.images.web?.url} alt={art.title} className="card__img" />
                             <div
                                 className="card-description"
