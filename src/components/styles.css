@@ -20,7 +20,7 @@
 
 .search-field__input {
     padding-left: 1rem;
-    width: 40vw;
+    width: 30vw;
     height: 3rem;
     outline: none;
     background-color: #f8f9fa;
@@ -44,7 +44,7 @@
 .card__body {
     width: 20vw;
     border-radius: 20px;
-    transition: opacity 0.6s;
+    transition: opacity 0.5s;
 }
 
 .card__img {
@@ -96,7 +96,7 @@
 
 @media screen and (max-width: 1200px) {
     .search-field__input {
-        width: 60vw;
+        width: 40vw;
     }
     .card__body {
         width: 35vw;
