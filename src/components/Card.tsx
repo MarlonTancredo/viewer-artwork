@@ -15,19 +15,34 @@ const Card = ({ data }: Data) => {
                         <section key={art.id} className="card__body card--shadow card--fade-in">
                             <img src={art.images.web?.url} alt={art.title} className="card__img" />
                             <div
+                                className="card-description__container"
                                 style={{
                                     display: "flex",
                                     flexDirection: "column",
                                     alignItems: "right",
                                 }}
                             >
-                                <div id="title" style={{ color: "#141115", padding: "1rem" }}>
-                                    <div style={{ fontSize: "0.9rem", fontWeight: "bold", marginBottom: "0.8rem" }}>
-                                        {art.title}
-                                    </div>
-                                    <div style={{ fontSize: "0.8rem", color: "#6d6875" }}>
-                                        {art.department} {art.creation_date_latest}
-                                    </div>
+                                <div
+                                    className="card-description__title"
+                                    style={{
+                                        fontSize: "0.9rem",
+                                        fontWeight: "bold",
+                                        color: "#141115",
+                                        padding: "0.5rem",
+                                    }}
+                                >
+                                    {art.title}
+                                </div>
+                                <div
+                                    className="card-description__department"
+                                    style={{
+                                        fontSize: "0.8rem",
+                                        color: "#6d6875",
+                                        paddingBottom: "1rem",
+                                        paddingLeft: "0.5rem",
+                                    }}
+                                >
+                                    {art.department} {art.creation_date_latest}
                                 </div>
                             </div>
                         </section>
