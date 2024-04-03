@@ -1,25 +1,26 @@
-import { Art, Data } from "../types/data";
+import { Art } from "../types/data";
 import "./styles.css";
 
-const Card = ({ data }: Data) => {
+type CardHandles = {
+    data: Art[];
+    handleClick?: () => void;
+};
+
+const Card = ({ data, handleClick }: CardHandles) => {
     return (
         <>
-            <div
-                className="card__container"
-                onClick={() => {
-                    console.log("Click");
-                }}
-            >
+            <div className="card__container" onClick={handleClick}>
                 {data?.map((art: Art) => {
                     return (
                         <section key={art.id} className="card__body card--shadow card--fade-in">
                             <img src={art.images.web?.url} alt={art.title} className="card__img" />
                             <div
-                                className="card-description__container"
+                                className="card-description"
                                 style={{
                                     display: "flex",
                                     flexDirection: "column",
                                     alignItems: "right",
+                                    padding: "1rem",
                                 }}
                             >
                                 <div
@@ -28,7 +29,7 @@ const Card = ({ data }: Data) => {
                                         fontSize: "0.9rem",
                                         fontWeight: "bold",
                                         color: "#141115",
-                                        padding: "0.5rem",
+                                        marginBottom: "0.5rem",
                                     }}
                                 >
                                     {art.title}
@@ -39,10 +40,21 @@ const Card = ({ data }: Data) => {
                                         fontSize: "0.8rem",
                                         color: "#6d6875",
                                         paddingBottom: "1rem",
-                                        paddingLeft: "0.5rem",
                                     }}
                                 >
                                     {art.department} {art.creation_date_latest}
+                                </div>
+                                <div
+                                    className="card-description__save-art"
+                                    style={{
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                        fontSize: "0.8rem",
+                                        color: "#6d6875",
+                                    }}
+                                >
+                                    <i>Click to save...</i>
                                 </div>
                             </div>
                         </section>
