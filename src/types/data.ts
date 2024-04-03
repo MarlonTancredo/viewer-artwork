@@ -1,7 +1,3 @@
-type Data = {
-    data: Art[];
-};
-
 type Art = {
     id: number;
     title: string;
@@ -24,4 +20,4 @@ type Creator = {
     role: string;
 };
 
-export type { Art, Data, Creator };
+export type { Art, Creator };
