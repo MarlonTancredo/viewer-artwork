@@ -1,15 +1,17 @@
 import { useQuery } from "@tanstack/react-query";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
+import Header from "../components/Header";
+import SearchField from "../components/SearchField";
 import Card from "../components/Card";
 import Loading from "../components/Loading";
-import SearchField from "../components/SearchField";
-import Header from "../components/Header";
+import SavedCardModal from "../components/SavedCardModal";
 import "./styles.css";
 
 const App = () => {
     const [limit, setLimit] = useState(8);
     const [searchInput, setSearchInput] = useState("ocean");
+    const [isSavedClicked, setIsSavedClicked] = useState(false);
     const { ref, inView } = useInView({ threshold: 1 });
 
     const getData = async () => {
@@ -47,6 +49,13 @@ const App = () => {
         setSearchInput(e.target.value);
     };
 
+    const handleCardClick = () => {
+        setIsSavedClicked(true);
+        setTimeout(() => {
+            setIsSavedClicked(false);
+        }, 1500);
+    };
+
     if (data?.length === 0) {
         return (
             <>
@@ -76,7 +85,8 @@ const App = () => {
                 <Header>
                     <SearchField handleSearchInput={handleSearchInput} handleKeyDown={handleKeyDown} />
                 </Header>
-                <Card data={data} />
+                <SavedCardModal isSavedClicked={isSavedClicked} />
+                <Card data={data} handleClick={handleCardClick} />
                 <div ref={ref}>{isFetching && <Loading />}</div>
             </div>
         </>
