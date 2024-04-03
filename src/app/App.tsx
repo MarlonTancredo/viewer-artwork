@@ -7,6 +7,7 @@ import Card from "../components/Card";
 import Loading from "../components/Loading";
 import SavedCardModal from "../components/SavedCardModal";
 import "./styles.css";
+import { Route, Routes } from "react-router-dom";
 
 const App = () => {
     const [limit, setLimit] = useState(8);
@@ -84,10 +85,25 @@ const App = () => {
             <div className="app__container">
                 <Header>
                     <SearchField handleSearchInput={handleSearchInput} handleKeyDown={handleKeyDown} />
+                    <ul
+                        style={{
+                            display: "flex",
+                            listStyle: "none",
+                            color: "white",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            paddingLeft: "0",
+                        }}
+                    >
+                        <li style={{ padding: "0.5rem" }}>Home</li>
+                        <li style={{ padding: "0.5rem" }}>Saved</li>
+                    </ul>
                 </Header>
                 <SavedCardModal isSavedClicked={isSavedClicked} />
                 <Card data={data} handleClick={handleCardClick} />
-                <div ref={ref}>{isFetching && <Loading />}</div>
+                <div style={{ marginBottom: "3rem" }} ref={ref}>
+                    {isFetching && <Loading />}
+                </div>
             </div>
         </>
     );
