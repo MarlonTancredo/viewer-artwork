@@ -33,10 +33,14 @@
     background-color: #212529;
     border: 1px solid #f8f9fa;
     border-radius: 45px;
+    transition: box-shadow 0.5s;
 }
 
 .search-field__input:hover {
     cursor: text;
+    box-shadow:
+        0 4px 8px 0 #00000033,
+        0 6px 20px 0 #00000030;
 }
 
 /* CARD */
@@ -123,6 +127,11 @@
     padding: 0.5rem;
     text-decoration: none;
     color: #f8f9fa;
+    transition: color 0.5s;
+}
+
+.nav-link__link:hover {
+    color: #6d6875;
 }
 
 /* SAVED CARD MODAL */
