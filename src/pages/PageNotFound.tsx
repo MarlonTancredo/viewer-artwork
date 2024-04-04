@@ -9,7 +9,7 @@ const PageNotFound = () => {
                 <Header>
                     <NavLink />
                 </Header>
-                <main>
+                <main className="page__main">
                     <h1>Page Not Found!</h1>
                 </main>
             </div>

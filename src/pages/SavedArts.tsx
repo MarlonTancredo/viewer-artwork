@@ -8,7 +8,7 @@ const SavedArts = () => {
                 <Header>
                     <NavLinks />
                 </Header>
-                <main>
+                <main className="page__main">
                     <h1>Saved Arts Page</h1>
                 </main>
             </div>
