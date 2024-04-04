@@ -55,7 +55,7 @@ const Home = () => {
     const handleCardClick = () => {
         const timeOut = setTimeout(() => {
             setIsSavedClicked(false);
-        }, 300);
+        }, 500);
 
         setIsSavedClicked(true);
 

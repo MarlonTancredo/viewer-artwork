@@ -1,10 +1,22 @@
+:root {
+    --dark-bg-color: #212529;
+    --medium-bg-color: #6d6875;
+    --clear-bg-color: #f8f9fa;
+    --dark-txt-color: #212529;
+    --medium-txt-color: #6d6875;
+    --clear-txt-color: #f8f9fa;
+    --dark-border-color: #212529;
+    --medium-border-color: #6d6875;
+    --clear-border-color: #f8f9fa;
+}
+
 /* HEADER */
 .header__container {
     display: flex;
     flex-direction: column;
     height: 10rem;
     width: 100%;
-    background-color: #212529;
+    background-color: var(--dark-bg-color);
     justify-content: center;
     align-items: center;
     z-index: 1;
@@ -29,10 +41,10 @@
     padding-left: 1rem;
     height: 3rem;
     outline: none;
-    color: #f8f9fa;
+    color: var(--clear-txt-color);
     border: none;
-    background-color: #212529;
-    border: 1px solid #f8f9fa;
+    background-color: var(--dark-bg-color);
+    border: 1px solid var(--clear-border-color);
     border-radius: 45px;
     transition: box-shadow 0.5s;
 }
@@ -78,13 +90,13 @@
 .card__title {
     font-size: 0.9rem;
     font-weight: bold;
-    color: #141115;
+    color: var(--clear-txt-color);
     margin-bottom: 0.5rem;
 }
 
 .card__department {
     font-size: 0.8rem;
-    color: #6d6875;
+    color: var(--medium-txt-color);
     padding-bottom: 1rem;
 }
 
@@ -93,7 +105,7 @@
     align-items: center;
     justify-content: center;
     font-size: 0.8rem;
-    color: #6d6875;
+    color: var(--medium-txt-color);
 }
 
 .card__body:hover {
@@ -127,22 +139,22 @@
 .nav-link__link {
     padding: 0.5rem;
     text-decoration: none;
-    color: #f8f9fa;
+    color: var(--clear-txt-color);
     transition: color 0.5s;
 }
 
 .nav-link__link-selected {
-    border-bottom: 1px solid #6d6875;
+    border-bottom: 1px solid var(--clear-border-color);
 }
 
 .nav-link__link:hover {
-    color: #6d6875;
+    color: var(--medium-txt-color);
 }
 
 /* SAVED CARD MODAL */
 .saved-card-modal__container {
-    background-color: #212529;
-    color: #f8f9fa;
+    background-color: var(--dark-bg-color);
+    color: var(--clear-txt-color);
     padding: 1rem;
     position: fixed;
     bottom: 0;
