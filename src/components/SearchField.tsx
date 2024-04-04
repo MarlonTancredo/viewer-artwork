@@ -1,8 +1,8 @@
 import "./styles.css";
 
 type Handles = {
-    handleKeyDown?: (e: { key: string }) => void;
-    handleSearchInput?: (e: { target: { value: string } }) => void;
+    handleSearchInput: (e: { target: { value: string } }) => void;
+    handleKeyDown: (e: { key: string }) => void;
 };
 
 const SearchField = ({ handleSearchInput, handleKeyDown }: Handles) => {
