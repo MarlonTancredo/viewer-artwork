@@ -1,16 +1,3 @@
-:root {
-    --dark-bg-color: #212529;
-    --medium-bg-color: #6d6875;
-    --clear-bg-color: #f8f9fa;
-    --dark-txt-color: #212529;
-    --medium-txt-color: #6d6875;
-    --clear-txt-color: #f8f9fa;
-    --dark-border-color: #212529;
-    --medium-border-color: #6d6875;
-    --clear-border-color: #f8f9fa;
-    --transition-time: 0.5s;
-}
-
 /* HEADER */
 .header__container {
     display: flex;
