@@ -12,7 +12,7 @@ body {
     font-size: 0.9rem;
     background-color: var(--clear-bg-color);
     margin: 0;
-    -webkit-appearance: none;
+    appearance: none;
 }
 
 p {
