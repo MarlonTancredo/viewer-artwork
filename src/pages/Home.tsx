@@ -10,6 +10,8 @@ import { useQuery } from "@tanstack/react-query";
 import SavedCardModal from "../components/SavedCardModal";
 import NavLinks from "../components/NavLinks";
 
+import "./styles.css";
+
 const Home = () => {
     const [limit, setLimit] = useState(8);
     const [searchInput, setSearchInput] = useState("");
@@ -63,7 +65,7 @@ const Home = () => {
     if (data?.length === 0) {
         return (
             <>
-                <div className="app__container">
+                <div className="page__container">
                     <Header>
                         <SearchField handleSearchInput={handleSearchInput} handleKeyDown={handleEnterKeyDown} />
                         <NavLinks />
@@ -80,17 +82,17 @@ const Home = () => {
 
     return status === "pending" ? (
         <>
-            <div className="app__container">
+            <div className="page__container">
                 <Loading />
             </div>
         </>
     ) : status === "error" ? (
         <>
-            <div className="app__container">{error.message}</div>
+            <div className="page__container">{error.message}</div>
         </>
     ) : (
         <>
-            <div className="app__container">
+            <div className="page__container">
                 <SavedCardModal isSavedClicked={isSavedClicked} />
                 <Header>
                     <SearchField handleSearchInput={handleSearchInput} handleKeyDown={handleEnterKeyDown} />

@@ -4,9 +4,12 @@ import NavLinks from "../components/NavLinks";
 const SavedArts = () => {
     return (
         <>
-            <Header>
-                <NavLinks />
-            </Header>
+            <div className="page__container">
+                <Header>
+                    <NavLinks />
+                </Header>
+                <h1>Saved Arts Page</h1>
+            </div>
         </>
     );
 };
