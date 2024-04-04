@@ -14,46 +14,12 @@ const Card = ({ data, handleClick }: CardTypes) => {
                     return (
                         <section key={art.id} className="card__body card--shadow card--fade-in" onClick={handleClick}>
                             <img src={art.images.web?.url} alt={art.title} className="card__img" />
-                            <div
-                                className="card-description"
-                                style={{
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    alignItems: "right",
-                                    padding: "1rem",
-                                }}
-                            >
-                                <div
-                                    className="card-description__title"
-                                    style={{
-                                        fontSize: "0.9rem",
-                                        fontWeight: "bold",
-                                        color: "#141115",
-                                        marginBottom: "0.5rem",
-                                    }}
-                                >
-                                    {art.title}
-                                </div>
-                                <div
-                                    className="card-description__department"
-                                    style={{
-                                        fontSize: "0.8rem",
-                                        color: "#6d6875",
-                                        paddingBottom: "1rem",
-                                    }}
-                                >
+                            <div className="card__description">
+                                <div className="card__title">{art.title}</div>
+                                <div className="card__department">
                                     {art.department} {art.creation_date_latest}
                                 </div>
-                                <div
-                                    className="card-description__save-art"
-                                    style={{
-                                        display: "flex",
-                                        alignItems: "center",
-                                        justifyContent: "center",
-                                        fontSize: "0.8rem",
-                                        color: "#6d6875",
-                                    }}
-                                >
+                                <div className="card__save-art">
                                     <i>Click to save...</i>
                                 </div>
                             </div>
