@@ -1,12 +1,12 @@
 import { Art } from "../types/data";
 import "./styles.css";
 
-type CardHandles = {
+type CardTypes = {
     data: Art[];
     handleClick?: () => void;
 };
 
-const Card = ({ data, handleClick }: CardHandles) => {
+const Card = ({ data, handleClick }: CardTypes) => {
     return (
         <>
             <div className="card__container">
