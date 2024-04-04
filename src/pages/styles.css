@@ -10,7 +10,13 @@
     animation-name: fadeInOpacity;
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
-    animation-duration: 0.5s;
+    animation-duration: var(--transition-time);
+}
+
+.page__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 @keyframes fadeInOpacity {

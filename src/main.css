@@ -10,8 +10,7 @@ html {
 body {
     font-family: "Roboto";
     font-size: 0.9rem;
-    text-decoration: #141115;
-    background-color: #f8f9fa;
+    background-color: var(--clear-bg-color);
     margin: 0;
 }
 

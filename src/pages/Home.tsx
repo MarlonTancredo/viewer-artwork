@@ -98,7 +98,7 @@ const Home = () => {
                     <SearchField handleSearchInput={handleSearchInput} handleKeyDown={handleEnterKeyDown} />
                     <NavLinks />
                 </Header>
-                <main>
+                <main className="page__main">
                     <Card data={data} handleClick={handleCardClick} />
                     <div style={{ marginBottom: "3rem" }} ref={ref}>
                         {isFetching && <Loading />}

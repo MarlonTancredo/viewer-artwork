@@ -8,6 +8,8 @@
     --dark-border-color: #212529;
     --medium-border-color: #6d6875;
     --clear-border-color: #f8f9fa;
+    --test: red;
+    --transition-time: 0.5s;
 }
 
 /* HEADER */
@@ -52,7 +54,7 @@
     background-color: var(--clear-bg-color);
     border: 1px solid var(--dark-border-color);
     border-radius: 45px;
-    transition: box-shadow 0.5s;
+    transition: box-shadow var(--transition-time);
 }
 
 .search-field__input:hover {
@@ -75,7 +77,7 @@
 .card__body {
     width: 20vw;
     border-radius: 20px;
-    transition: opacity 0.5s;
+    transition: opacity var(--transition-time);
 }
 
 .card__img {
@@ -139,7 +141,7 @@
     padding: 0.5rem;
     text-decoration: none;
     color: var(--medium-txt-color);
-    transition: color 0.5s;
+    transition: color var(--transition-time);
 }
 
 .nav-link__link-selected {
