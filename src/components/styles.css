@@ -90,7 +90,7 @@
 .card__title {
     font-size: 0.9rem;
     font-weight: bold;
-    color: var(--clear-txt-color);
+    color: var(--dark-txt-color);
     margin-bottom: 0.5rem;
 }
 
