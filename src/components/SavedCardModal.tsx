@@ -1,8 +1,3 @@
-const display = {
-    hideDisplay: "none",
-    showDisplay: "",
-};
-
 type IsSavedClicked = {
     isSavedClicked: boolean;
 };
@@ -11,26 +6,13 @@ const SavedCardModal = ({ isSavedClicked }: IsSavedClicked) => {
     if (isSavedClicked) {
         return (
             <>
-                <span
-                    style={{
-                        display: `${display.showDisplay}`,
-                        backgroundColor: "#212529",
-                        color: "#f8f9fa",
-                        padding: "1rem",
-                        position: "fixed",
-                        bottom: "0",
-                        left: "0",
-                        zIndex: "1",
-                    }}
-                >
-                    Saved!
-                </span>
+                <div className="saved-card__container">Saved!</div>
             </>
         );
     }
     return (
         <>
-            <span style={{ display: `${display.hideDisplay}` }}>Saved!</span>
+            <div className="saved-card--hidden">Saved!</div>
         </>
     );
 };

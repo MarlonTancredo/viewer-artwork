@@ -110,6 +110,34 @@
     animation-duration: 1s;
 }
 
+.nav-link__container {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0;
+}
+
+.nav-link__link {
+    padding: 0.5rem;
+    text-decoration: none;
+    color: #f8f9fa;
+}
+
+.saved-card__container {
+    background-color: #212529;
+    color: #f8f9fa;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.saved-card--hidden {
+    display: none;
+}
+
 @keyframes fadeInOpacity {
     0% {
         opacity: 0;

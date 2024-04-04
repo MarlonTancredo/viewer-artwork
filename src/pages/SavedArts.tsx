@@ -1,5 +1,5 @@
 import Header from "../components/Header";
-import NavLinks from "../components/NavLinks";
+import NavLinks from "../components/NavLink";
 
 const SavedArts = () => {
     return (
