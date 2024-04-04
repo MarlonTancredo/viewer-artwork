@@ -1,4 +1,4 @@
-/* Header */
+/* HEADER */
 .header__container {
     display: flex;
     height: 6rem;
@@ -14,7 +14,7 @@
     height: 6rem;
 }
 
-/* Search field */
+/* SEARCH FIELD */
 .search-field__container {
     display: flex;
     height: 6rem;
@@ -39,7 +39,7 @@
     cursor: text;
 }
 
-/* Card */
+/* CARD */
 .card__container {
     display: flex;
     flex-wrap: wrap;
@@ -110,6 +110,7 @@
     animation-duration: 1s;
 }
 
+/* NAV LINK */
 .nav-link__container {
     display: flex;
     list-style: none;
@@ -124,7 +125,8 @@
     color: #f8f9fa;
 }
 
-.saved-card__container {
+/* SAVED CARD MODAL */
+.saved-card-modal__container {
     background-color: #212529;
     color: #f8f9fa;
     padding: 1rem;
@@ -134,7 +136,7 @@
     z-index: 1;
 }
 
-.saved-card--hidden {
+.saved-card-modal--hidden {
     display: none;
 }
 

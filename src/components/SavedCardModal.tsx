@@ -6,13 +6,13 @@ const SavedCardModal = ({ isSavedClicked }: IsSavedClicked) => {
     if (isSavedClicked) {
         return (
             <>
-                <div className="saved-card__container">Saved!</div>
+                <div className="saved-card-modal__container">Saved!</div>
             </>
         );
     }
     return (
         <>
-            <div className="saved-card--hidden">Saved!</div>
+            <div className="saved-card-modal--hidden">Saved!</div>
         </>
     );
 };
