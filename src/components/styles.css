@@ -16,7 +16,7 @@
     flex-direction: column;
     height: 10rem;
     width: 100%;
-    background-color: var(--dark-bg-color);
+    background-color: var(--clear-bg-color);
     justify-content: center;
     align-items: center;
     z-index: 1;
@@ -41,10 +41,10 @@
     padding-left: 1rem;
     height: 3rem;
     outline: none;
-    color: var(--clear-txt-color);
+    color: var(--dark-txt-color);
     border: none;
-    background-color: var(--dark-bg-color);
-    border: 1px solid var(--clear-border-color);
+    background-color: var(--clear-bg-color);
+    border: 1px solid var(--dark-border-color);
     border-radius: 45px;
     transition: box-shadow 0.5s;
 }
@@ -139,16 +139,16 @@
 .nav-link__link {
     padding: 0.5rem;
     text-decoration: none;
-    color: var(--clear-txt-color);
+    color: var(--medium-txt-color);
     transition: color 0.5s;
 }
 
 .nav-link__link-selected {
-    border-bottom: 1px solid var(--clear-border-color);
+    border-bottom: 1px solid var(--medium-border-color);
 }
 
 .nav-link__link:hover {
-    color: var(--medium-txt-color);
+    color: var(--dark-txt-color);
 }
 
 /* SAVED CARD MODAL */
