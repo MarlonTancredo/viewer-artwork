@@ -18,7 +18,7 @@ const SavedCardModal = ({ isSavedClicked }: IsSavedClicked) => {
                         color: "#f8f9fa",
                         padding: "1rem",
                         position: "fixed",
-                        top: "95px",
+                        bottom: "0",
                         left: "0",
                         zIndex: "1",
                     }}

@@ -32,6 +32,7 @@
     border: none;
     background-color: #212529;
     border: 1px solid #f8f9fa;
+    border-radius: 45px;
 }
 
 .search-field__input:hover {
@@ -139,10 +140,10 @@
 @media screen and (max-width: 500px) {
     .header__container {
         flex-direction: column;
-        height: 8rem;
+        height: 10rem;
     }
     .header__margin {
-        height: 8rem;
+        height: 10rem !important;
     }
     .search-field__container {
         width: 60vw;

@@ -66,8 +66,13 @@ const Home = () => {
                 <div className="app__container">
                     <Header>
                         <SearchField handleSearchInput={handleSearchInput} handleKeyDown={handleEnterKeyDown} />
+                        <NavLinks />
                     </Header>
-                    <h1>Artwork not found!</h1>
+                    <h1>
+                        Artwork not found!
+                        <br />
+                        Try a different name!
+                    </h1>
                 </div>
             </>
         );
