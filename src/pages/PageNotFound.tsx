@@ -1,7 +1,18 @@
+import Header from "../components/Header";
+import NavLink from "../components/NavLink";
+import "./styles.css";
+
 const PageNotFound = () => {
     return (
         <>
-            <h1>Page Not Found!</h1>
+            <div className="page__container page--fade-in ">
+                <Header>
+                    <NavLink />
+                </Header>
+                <main>
+                    <h1>Page Not Found!</h1>
+                </main>
+            </div>
         </>
     );
 };

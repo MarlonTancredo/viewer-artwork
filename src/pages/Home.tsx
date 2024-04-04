@@ -65,7 +65,7 @@ const Home = () => {
     if (data?.length === 0) {
         return (
             <>
-                <div className="page__container">
+                <div className="page__container page--fade-in ">
                     <Header>
                         <SearchField handleSearchInput={handleSearchInput} handleKeyDown={handleEnterKeyDown} />
                         <NavLinks />
@@ -82,26 +82,28 @@ const Home = () => {
 
     return status === "pending" ? (
         <>
-            <div className="page__container">
+            <div className="page__container page--fade-in ">
                 <Loading />
             </div>
         </>
     ) : status === "error" ? (
         <>
-            <div className="page__container">{error.message}</div>
+            <div className="page__container page--fade-in ">{error.message}</div>
         </>
     ) : (
         <>
-            <div className="page__container">
+            <div className="page__container page--fade-in ">
                 <SavedCardModal isSavedClicked={isSavedClicked} />
                 <Header>
                     <SearchField handleSearchInput={handleSearchInput} handleKeyDown={handleEnterKeyDown} />
                     <NavLinks />
                 </Header>
-                <Card data={data} handleClick={handleCardClick} />
-                <div style={{ marginBottom: "3rem" }} ref={ref}>
-                    {isFetching && <Loading />}
-                </div>
+                <main>
+                    <Card data={data} handleClick={handleCardClick} />
+                    <div style={{ marginBottom: "3rem" }} ref={ref}>
+                        {isFetching && <Loading />}
+                    </div>
+                </main>
             </div>
         </>
     );

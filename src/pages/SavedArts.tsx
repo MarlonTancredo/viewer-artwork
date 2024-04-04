@@ -4,11 +4,13 @@ import NavLinks from "../components/NavLink";
 const SavedArts = () => {
     return (
         <>
-            <div className="page__container">
+            <div className="page__container page--fade-in">
                 <Header>
                     <NavLinks />
                 </Header>
-                <h1>Saved Arts Page</h1>
+                <main>
+                    <h1>Saved Arts Page</h1>
+                </main>
             </div>
         </>
     );

@@ -126,14 +126,6 @@
         0 6px 20px 0 #00000030;
 }
 
-.card--fade-in {
-    opacity: 1;
-    animation-name: fadeInOpacity;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-in;
-    animation-duration: 1s;
-}
-
 /* NAV LINK */
 .nav-link__container {
     display: flex;
@@ -171,15 +163,6 @@
 
 .saved-card-modal--hidden {
     display: none;
-}
-
-@keyframes fadeInOpacity {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
 }
 
 /* Media queries */
