@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 
 import SavedCardModal from "../components/SavedCardModal";
-import NavLinks from "../components/NavLink";
+import NavLink from "../components/NavLink";
 
 import "./styles.css";
 
@@ -68,7 +68,7 @@ const Home = () => {
                 <div className="page__container page--fade-in ">
                     <Header>
                         <SearchField handleSearchInput={handleSearchInput} handleKeyDown={handleEnterKeyDown} />
-                        <NavLinks />
+                        <NavLink />
                     </Header>
                     <h1>
                         Artwork not found!
@@ -104,7 +104,7 @@ const Home = () => {
                 <SavedCardModal isSavedClicked={isSavedClicked} />
                 <Header>
                     <SearchField handleSearchInput={handleSearchInput} handleKeyDown={handleEnterKeyDown} />
-                    <NavLinks />
+                    <NavLink />
                 </Header>
                 <main className="page__main">
                     <Card data={data} handleClick={handleCardClick} />
