@@ -3,16 +3,9 @@ type IsSavedClicked = {
 };
 
 const SavedCardModal = ({ isSavedClicked }: IsSavedClicked) => {
-    if (isSavedClicked) {
-        return (
-            <>
-                <div className="saved-card-modal__container">Saved!</div>
-            </>
-        );
-    }
     return (
         <>
-            <div className="saved-card-modal--hidden">Saved!</div>
+            <div className={isSavedClicked ? "saved-card-modal__container" : "saved-card-modal--hidden"}>Saved!</div>
         </>
     );
 };
