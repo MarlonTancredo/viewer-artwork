@@ -80,17 +80,25 @@ const Home = () => {
         );
     }
 
-    return status === "pending" ? (
-        <>
-            <div className="page__container page--fade-in ">
-                <Loading />
-            </div>
-        </>
-    ) : status === "error" ? (
-        <>
-            <div className="page__container page--fade-in ">{error.message}</div>
-        </>
-    ) : (
+    if (status === "pending") {
+        return (
+            <>
+                <div className="page__container page--fade-in ">
+                    <Loading />
+                </div>
+            </>
+        );
+    }
+
+    if (status === "error") {
+        return (
+            <>
+                <div className="page__container page--fade-in ">{error.message}</div>
+            </>
+        );
+    }
+
+    return (
         <>
             <div className="page__container page--fade-in ">
                 <SavedCardModal isSavedClicked={isSavedClicked} />
