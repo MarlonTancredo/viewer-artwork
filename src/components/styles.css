@@ -22,23 +22,15 @@
 }
 
 /* SEARCH FIELD */
-.search-field__container {
-    display: flex;
-    height: 6rem;
-    width: 30vw;
-    justify-content: center;
-    align-items: center;
-}
-
 .search-field__input {
-    width: 100%;
+    width: 30vw;
     padding-left: 1rem;
     height: 3rem;
     outline: none;
-    color: var(--dark-txt-color);
+    color: var(--medium-txt-color);
     border: none;
     background-color: var(--clear-bg-color);
-    border: 1px solid var(--dark-border-color);
+    border: 1px solid var(--medium-border-color);
     border-radius: 45px;
     transition: box-shadow var(--transition-time);
 }
@@ -63,6 +55,7 @@
 .card__body {
     width: 20vw;
     border-radius: 20px;
+    opacity: 80%;
     transition: opacity var(--transition-time);
 }
 
@@ -89,6 +82,12 @@
     margin-bottom: 0.5rem;
 }
 
+.card__creator {
+    font-size: 0.8rem;
+    color: var(--medium-txt-color);
+    padding-bottom: 1rem;
+}
+
 .card__department {
     font-size: 0.8rem;
     color: var(--medium-txt-color);
@@ -105,7 +104,7 @@
 
 .card__body:hover {
     cursor: pointer;
-    opacity: 80%;
+    opacity: 100%;
 }
 
 .card--shadow {
@@ -144,9 +143,9 @@
     color: var(--clear-txt-color);
     padding: 1rem;
     position: fixed;
-    bottom: 0;
     left: 0;
-    z-index: 1;
+    top: 0;
+    z-index: 2;
 }
 
 .saved-card-modal--hidden {
