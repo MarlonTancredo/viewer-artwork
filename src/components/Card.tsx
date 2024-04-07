@@ -15,13 +15,16 @@ const Card = ({ data, handleClick }: CardTypes) => {
                         <section key={art.id} className="card__body card--shadow card--fade-in" onClick={handleClick}>
                             <img src={art.images.web?.url} alt={art.title} className="card__img" />
                             <div className="card__description">
-                                <div className="card__title">{art.title}</div>
+                                <div className="card__title">
+                                    {art.title} {art.creation_date_latest}
+                                </div>
+                                <div className="card__creator">
+                                    {art.creators.length === 0 ? "" : `By ${art.creators[0].description}`}
+                                </div>
                                 <div className="card__department">
-                                    {art.department} {art.creation_date_latest}
+                                    <i>{art.department}</i>
                                 </div>
-                                <div className="card__save-art">
-                                    <i>Click to save...</i>
-                                </div>
+                                <div className="card__save-art">Click to save...</div>
                             </div>
                         </section>
                     );
