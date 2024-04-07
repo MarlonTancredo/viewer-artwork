@@ -12,7 +12,7 @@ type Creator = {
     biography: null;
     birth_year: string;
     death_year: string;
-    description: string;
+    description?: string;
     extent: null;
     id: number;
     name_in_original_language: null | string;
