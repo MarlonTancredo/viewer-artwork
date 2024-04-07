@@ -1,11 +1,11 @@
 type IsSavedClicked = {
-    isSavedClicked: boolean;
+    isModalActive: boolean;
 };
 
-const SavedCardModal = ({ isSavedClicked }: IsSavedClicked) => {
+const SavedCardModal = ({ isModalActive }: IsSavedClicked) => {
     return (
         <>
-            <div className={isSavedClicked ? "saved-card-modal__container" : "saved-card-modal--hidden"}>Saved!</div>
+            <div className={isModalActive ? "saved-card-modal__container" : "saved-card-modal--hidden"}>Saved!</div>
         </>
     );
 };
