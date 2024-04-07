@@ -8,13 +8,15 @@ type Handles = {
 const SearchField = ({ handleSearchInput, handleKeyDown }: Handles) => {
     return (
         <>
-            <input
-                className="search-field__input"
-                type="text"
-                placeholder="Search..."
-                onChange={handleSearchInput}
-                onKeyDown={handleKeyDown}
-            />
+            <div className="search-field__container">
+                <input
+                    className="search-field__input"
+                    type="text"
+                    placeholder="Search..."
+                    onChange={handleSearchInput}
+                    onKeyDown={handleKeyDown}
+                />
+            </div>
         </>
     );
 };

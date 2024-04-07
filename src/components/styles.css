@@ -22,8 +22,16 @@
 }
 
 /* SEARCH FIELD */
-.search-field__input {
+.search-field__container {
+    display: flex;
+    height: 6rem;
     width: 30vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-field__input {
+    width: 100%;
     padding-left: 1rem;
     height: 3rem;
     outline: none;
