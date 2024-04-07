@@ -15,7 +15,7 @@ import "./styles.css";
 const Home = () => {
     const [limit, setLimit] = useState(8);
     const [searchInput, setSearchInput] = useState("");
-    const [isSavedClicked, setIsSavedClicked] = useState(false);
+    const [isModalActive, setIsModalActive] = useState(false);
     const { ref, inView } = useInView({ threshold: 1 });
 
     const { data, status, error, isFetching, refetch } = useQuery({
@@ -54,10 +54,10 @@ const Home = () => {
 
     const handleCardClick = () => {
         const timeOut = setTimeout(() => {
-            setIsSavedClicked(false);
+            setIsModalActive(false);
         }, 500);
 
-        setIsSavedClicked(true);
+        setIsModalActive(true);
 
         timeOut;
     };
@@ -101,7 +101,7 @@ const Home = () => {
     return (
         <>
             <div className="page__container page--fade-in ">
-                <SavedCardModal isSavedClicked={isSavedClicked} />
+                <SavedCardModal isModalActive={isModalActive} />
                 <Header>
                     <SearchField handleSearchInput={handleSearchInput} handleKeyDown={handleEnterKeyDown} />
                     <NavLink />
