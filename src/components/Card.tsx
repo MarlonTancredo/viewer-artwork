@@ -1,18 +1,24 @@
-import { Art } from "../types/data";
 import "./styles.css";
+
+import { Art } from "../types/data";
+import { Fields } from "./CardModal";
 
 type CardTypes = {
     data: Art[];
-    handleClick?: () => void;
+    getCurrentCard: (data: Fields) => void;
 };
 
-const Card = ({ data, handleClick }: CardTypes) => {
+const Card = ({ data, getCurrentCard }: CardTypes) => {
+    const handleReadMoreClick = ({ id, imgUrl, title, accession_number, cardClick }: Fields) => {
+        getCurrentCard({ id, imgUrl, title, accession_number, cardClick });
+    };
+
     return (
         <>
             <div className="card__container">
                 {data?.map((art: Art) => {
                     return (
-                        <section key={art.id} className="card__body card--shadow card--fade-in" onClick={handleClick}>
+                        <section key={art.id} className="card__body card--shadow card--fade-in">
                             <img src={art.images.web?.url} alt={art.title} className="card__img" />
                             <div className="card__description">
                                 <div className="card__title">
@@ -24,7 +30,20 @@ const Card = ({ data, handleClick }: CardTypes) => {
                                 <div className="card__department">
                                     <i>{art.department}</i>
                                 </div>
-                                <div className="card__save-art">Click to save...</div>
+                                <div
+                                    className="card__read-more"
+                                    onClick={() =>
+                                        handleReadMoreClick({
+                                            id: art.id,
+                                            imgUrl: art.images.web.url,
+                                            title: art.title,
+                                            accession_number: art.accession_number,
+                                            cardClick: "click",
+                                        })
+                                    }
+                                >
+                                    READ MORE...
+                                </div>
                             </div>
                         </section>
                     );
