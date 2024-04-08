@@ -1,21 +1,27 @@
-import Card from "../components/Card";
-import Header from "../components/Header";
-import SearchField from "../components/SearchField";
+import "./styles.css";
 
-import Loading from "../components/Loading";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 
-import SavedCardModal from "../components/SavedCardModal";
+import Card from "../components/Card";
+import Header from "../components/Header";
+import SearchField from "../components/SearchField";
+import Loading from "../components/Loading";
 import NavLink from "../components/NavLink";
-
-import "./styles.css";
+import CardModal, { Fields } from "../components/CardModal";
 
 const Home = () => {
     const [limit, setLimit] = useState(8);
     const [searchInput, setSearchInput] = useState("");
-    const [isModalActive, setIsModalActive] = useState(false);
+    const [currentCard, setCurrentCard] = useState<Fields>({
+        id: "",
+        imgUrl: "",
+        title: "",
+        accession_number: "",
+        cardClick: "",
+    });
+    const [showModal, setShowModal] = useState(false);
     const { ref, inView } = useInView({ threshold: 1 });
 
     const { data, status, error, isFetching, refetch } = useQuery({
@@ -52,14 +58,15 @@ const Home = () => {
         setSearchInput(e.target.value);
     };
 
-    const handleCardClick = () => {
-        const timeOut = setTimeout(() => {
-            setIsModalActive(false);
-        }, 500);
+    const getFromCard = (card: Fields) => {
+        setCurrentCard(card);
+        setShowModal(true);
+    };
 
-        setIsModalActive(true);
-
-        timeOut;
+    const handleIsModalClosed = (closedButtonClicked: string) => {
+        if (closedButtonClicked === "click") {
+            setShowModal(false);
+        }
     };
 
     if (data?.length === 0) {
@@ -70,11 +77,7 @@ const Home = () => {
                         <SearchField handleSearchInput={handleSearchInput} handleKeyDown={handleEnterKeyDown} />
                         <NavLink />
                     </Header>
-                    <h1>
-                        Artwork not found!
-                        <br />
-                        Try a different name!
-                    </h1>
+                    <h1>Artwork not found! Try a different name!</h1>
                 </div>
             </>
         );
@@ -101,13 +104,23 @@ const Home = () => {
     return (
         <>
             <div className="page__container page--fade-in ">
-                <SavedCardModal isModalActive={isModalActive} />
+                {showModal ? (
+                    <CardModal
+                        data={currentCard}
+                        getClosedButtonClicked={(closedButtonClicked: string) =>
+                            handleIsModalClosed(closedButtonClicked)
+                        }
+                    />
+                ) : (
+                    <div style={{ display: "none" }}></div>
+                )}
+
                 <Header>
                     <SearchField handleSearchInput={handleSearchInput} handleKeyDown={handleEnterKeyDown} />
                     <NavLink />
                 </Header>
                 <main className="page__main">
-                    <Card data={data} handleClick={handleCardClick} />
+                    <Card data={data} getCurrentCard={(data: Fields) => getFromCard(data)} />
                     <div style={{ marginBottom: "3rem" }} ref={ref}>
                         {isFetching && <Loading />}
                     </div>
