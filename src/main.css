@@ -8,6 +8,8 @@
     --dark-border-color: #212529;
     --medium-border-color: #6d6875;
     --clear-border-color: #f8f9fa;
+    --link-color: #0582ca;
+    --link-color-hover: #0582ca;
     --transition-time: 0.5s;
 }
 
