@@ -13,7 +13,7 @@ import CardModal, { Fields } from "../components/CardModal";
 
 const Home = () => {
     const [limit, setLimit] = useState(8);
-    const [searchInput, setSearchInput] = useState("");
+    const [searchInput, setSearchInput] = useState("a");
     const [currentCard, setCurrentCard] = useState<Fields>({
         id: "",
         imgUrl: "",
@@ -103,30 +103,36 @@ const Home = () => {
 
     return (
         <>
-            <div className="page__container page--fade-in ">
-                {showModal ? (
+            {showModal ? (
+                <div className="page__container page--fade-in ">
                     <CardModal
                         data={currentCard}
                         getClosedButtonClicked={(closedButtonClicked: string) =>
                             handleIsModalClosed(closedButtonClicked)
                         }
                     />
-                ) : (
-                    <div style={{ display: "none" }}></div>
-                )}
-
-                <Header>
-                    <SearchField handleSearchInput={handleSearchInput} handleKeyDown={handleEnterKeyDown} />
-                    <NavLink />
-                </Header>
-                <main className="page__main">
-                    <Card data={data} getCurrentCard={(data: Fields) => getFromCard(data)} />
-                    <div style={{ marginBottom: "3rem" }} ref={ref}>
-                        {isFetching && <Loading />}
-                    </div>
-                </main>
-            </div>
+                </div>
+            ) : (
+                <div style={{ display: "none" }}></div>
+            )}
+            {!showModal ? (
+                <div className="page__container page--fade-in ">
+                    <Header>
+                        <SearchField handleSearchInput={handleSearchInput} handleKeyDown={handleEnterKeyDown} />
+                        <NavLink />
+                    </Header>
+                    <main className="page__main">
+                        <Card data={data} getCurrentCard={(data: Fields) => getFromCard(data)} />
+                        <div style={{ marginBottom: "3rem" }} ref={ref}>
+                            {isFetching && <Loading />}
+                        </div>
+                    </main>
+                </div>
+            ) : (
+                <div style={{ display: "none" }}></div>
+            )}
         </>
     );
 };
+
 export default Home;
