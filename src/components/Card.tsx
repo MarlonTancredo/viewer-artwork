@@ -35,8 +35,8 @@ const Card = ({ data, getCurrentCard }: CardTypes) => {
                                     onClick={() =>
                                         handleReadMoreClick({
                                             id: art.id,
-                                            imgUrl: art.images.web.url,
                                             title: art.title,
+                                            imgUrl: art.images.web.url,
                                             accession_number: art.accession_number,
                                             cardClick: "click",
                                         })

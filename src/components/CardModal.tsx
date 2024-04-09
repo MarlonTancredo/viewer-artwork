@@ -1,7 +1,7 @@
 export type Fields = {
     id: string;
-    imgUrl: string;
     title: string;
+    imgUrl: string;
     accession_number: string;
     cardClick: string;
 };
@@ -21,17 +21,27 @@ const CardModal = ({ data, getClosedButtonClicked }: Data) => {
             <div
                 style={{
                     zIndex: "2",
-                    backgroundColor: "#6d6875",
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
                     justifyContent: "center",
+                    width: "100vw",
                 }}
             >
                 <div
-                    style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}
+                    style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        width: "100vw",
+                    }}
                 >
-                    <img src={data?.imgUrl} alt={data?.title} />
+                    <img
+                        src={data?.imgUrl}
+                        alt={data?.title}
+                        style={{ width: "100vw", objectFit: "cover", objectPosition: "top" }}
+                    />
                     <div>{data?.title}</div>
                     <div>{data?.accession_number}</div>
                     <button onClick={handleCloseButton}>CLOSE</button>

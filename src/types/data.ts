@@ -5,6 +5,12 @@ type Art = {
     creation_date?: string;
     creation_date_latest: number;
     department: string;
+    technique: string;
+    type: string;
+    measurements: string;
+    did_you_know: string;
+    description: string;
+    url: string;
     creators: Creator[];
     images: { web: { url: string; width: string; height: string; filesize: string; filename: string } };
 };
