@@ -1,50 +1,56 @@
+import { Link, useLocation } from "react-router-dom";
+
 export type Fields = {
     id: string;
     title: string;
     imgUrl: string;
     accession_number: string;
     cardClick: string;
+    ref: string;
 };
 
 export type Data = {
-    data?: Fields;
-    getClosedButtonClicked: (data: string) => void;
+    data: Fields | null;
 };
 
-const CardModal = ({ data, getClosedButtonClicked }: Data) => {
-    const handleCloseButton = () => {
-        getClosedButtonClicked("click");
-    };
+const CardModal = () => {
+    const location = useLocation();
 
     return (
         <>
             <div
                 style={{
-                    zIndex: "2",
                     display: "flex",
-                    flexDirection: "column",
                     alignItems: "center",
                     justifyContent: "center",
-                    width: "100vw",
+                    width: "50vw",
                 }}
             >
+                <img src={location.state.imgUrl} />
                 <div
                     style={{
                         display: "flex",
                         flexDirection: "column",
                         justifyContent: "center",
                         alignItems: "center",
-                        width: "100vw",
+                        width: "50vw",
                     }}
                 >
-                    <img
-                        src={data?.imgUrl}
-                        alt={data?.title}
-                        style={{ width: "100vw", objectFit: "cover", objectPosition: "top" }}
-                    />
-                    <div>{data?.title}</div>
-                    <div>{data?.accession_number}</div>
-                    <button onClick={handleCloseButton}>CLOSE</button>
+                    <div>{location.state.title}</div>
+                    <div>{location.state.accession_number}</div>
+                    <div>{location.state.title}</div>
+                    <div>{location.state.accession_number}</div>
+                    <div>{location.state.title}</div>
+                    <div>{location.state.accession_number}</div>
+                    <div>{location.state.title}</div>
+                    <div>{location.state.accession_number}</div>
+                    <div>{location.state.title}</div>
+                    <div>{location.state.accession_number}</div>
+                    <div>{location.state.title}</div>
+                    <div>{location.state.accession_number}</div>
+                    <Link to="/art-works" preventScrollReset>
+                        CLOSE
+                    </Link>
                 </div>
             </div>
         </>
