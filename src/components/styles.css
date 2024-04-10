@@ -110,6 +110,7 @@
     font-size: 0.8rem;
     color: var(--link-color);
     transition: all var(--transition-time);
+    text-decoration: none;
 }
 
 .card__body:hover {
