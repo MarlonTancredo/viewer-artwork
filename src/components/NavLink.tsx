@@ -10,14 +10,16 @@ const NavLink = () => {
         <>
             <ul className="nav-link__container">
                 <Link
-                    className={pathname === "/" ? "nav-link__link nav-link__link-selected" : "nav-link__link"}
-                    to={"/"}
+                    className={pathname === "/art-works" ? "nav-link__link nav-link__link-selected" : "nav-link__link"}
+                    to={"/art-works"}
+                    preventScrollReset
                 >
-                    Home
+                    Art Works
                 </Link>
                 <Link
                     className={pathname === "/saved-arts" ? "nav-link__link nav-link__link-selected" : "nav-link__link"}
                     to={"/saved-arts"}
+                    preventScrollReset
                 >
                     Saved Arts
                 </Link>
