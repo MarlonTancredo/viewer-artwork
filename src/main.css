@@ -30,7 +30,8 @@ body {
     font-size: 0.9rem;
     background-color: var(--clear-bg-color);
     margin: 0;
-    appearance: none;
+    letter-spacing: 1px;
+    text-align: justify;
 }
 
 p {

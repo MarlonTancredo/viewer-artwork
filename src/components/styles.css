@@ -120,6 +120,7 @@
     flex-direction: column;
     align-items: right;
     padding: 1rem;
+    text-align: justify;
 }
 
 .card__title {
@@ -206,6 +207,7 @@
     gap: 1rem;
     padding: 1rem;
     color: var(--medium-txt-color);
+    text-align: justify;
 }
 
 .card-modal__link-section {
