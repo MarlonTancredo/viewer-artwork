@@ -7,7 +7,7 @@ type Children = {
 const Header = ({ children }: Children) => {
     return (
         <>
-            <div className="header__container header__container--shadow">{children}</div>
+            <div className="header__container container-shadow">{children}</div>
             <div className="header__margin"></div>
         </>
     );
