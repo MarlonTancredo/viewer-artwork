@@ -10,7 +10,7 @@ const SearchField = ({ handleSearchInput, handleKeyDown }: Handles) => {
         <>
             <div className="search-field__container">
                 <input
-                    className="search-field__input"
+                    className="search-field__input text--medium-color"
                     type="text"
                     placeholder="Search..."
                     onChange={handleSearchInput}
