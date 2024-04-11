@@ -12,28 +12,49 @@ const Cards = ({ data }: CardTypes) => {
         <>
             <div className="card__container">
                 {data?.map((art: Art) => {
+                    const {
+                        id,
+                        title,
+                        creation_date_latest,
+                        creators,
+                        department,
+                        accession_number,
+                        technique,
+                        type,
+                        measurements,
+                        did_you_know,
+                        description,
+                        url,
+                    } = art;
                     return (
-                        <section id={art.id} key={art.id} className="card__body card--shadow card--fade-in">
-                            <img src={art.images.web?.url} alt={art.title} className="card__img" />
+                        <section id={id} key={id} className="card__body card--shadow card--fade-in">
+                            <img src={art.images.web.url} alt={title} className="card__img" />
                             <div className="card__description">
                                 <div className="card__title">
-                                    {art.title} {art.creation_date_latest}
+                                    {title} {creation_date_latest}
                                 </div>
                                 <div className="card__creator">
-                                    {art.creators.length === 0 ? "" : `By ${art.creators[0].description}`}
+                                    {creators.length === 0 ? "" : `By ${creators[0].description}`}
                                 </div>
                                 <div className="card__department">
-                                    <i>{art.department}</i>
+                                    <i>{department}</i>
                                 </div>
                                 <Link
                                     className="card__read-more"
                                     to="/card-modal"
                                     state={{
-                                        id: art.id,
-                                        title: art.title,
+                                        id: id,
+                                        title: title,
+                                        creation_date_latest: creation_date_latest,
+                                        department: department,
                                         imgUrl: art.images.web.url,
-                                        accession_number: art.accession_number,
-                                        cardClick: "click",
+                                        accession_number: accession_number,
+                                        technique: technique,
+                                        type: type,
+                                        measurements: measurements,
+                                        did_you_know: did_you_know,
+                                        description: description,
+                                        linkToArtWork: url,
                                     }}
                                     preventScrollReset
                                 >
