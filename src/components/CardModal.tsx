@@ -24,6 +24,7 @@ const CardModal = () => {
     const location = useLocation();
     const {
         state: {
+            id,
             imgUrl,
             title,
             creation_date_latest,
@@ -41,7 +42,7 @@ const CardModal = () => {
     return (
         <>
             <div className="card-modal__container">
-                <div className="card-modal__img-container">
+                <div id={id} className="card-modal__img-container">
                     <h2>{title}</h2>
                     <img className="card-modal__img" src={imgUrl} />
                 </div>
@@ -87,9 +88,7 @@ const CardModal = () => {
                         <strong>Do you want see this ArtWork? </strong>
                         {linkToArtWork}
                     </a>
-                    <Link to="/art-works" preventScrollReset>
-                        CLOSE
-                    </Link>
+                    <Link to="/art-works">CLOSE</Link>
                 </div>
             </div>
         </>
