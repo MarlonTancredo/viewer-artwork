@@ -69,7 +69,7 @@ const MainLayout = () => {
                     <Header>
                         <NavLink />
                     </Header>
-                ) : location.pathname === "/card-modal" ? (
+                ) : location.pathname === "/card" ? (
                     <div></div>
                 ) : (
                     <Header>
