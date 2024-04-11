@@ -64,11 +64,6 @@ const MainLayout = () => {
 
     return (
         <>
-            <ScrollRestoration
-                getKey={(location) => {
-                    return location.pathname;
-                }}
-            />
             <div className="page__container page--fade-in ">
                 {location.pathname === "/saved-arts" ? (
                     <Header>
@@ -82,6 +77,16 @@ const MainLayout = () => {
                         <NavLink />
                     </Header>
                 )}
+                <ScrollRestoration
+                    getKey={(location) => {
+                        const paths = ["/art-works", "/saved-arts"];
+                        return paths.includes(location.pathname)
+                            ? // art-works and saved-works restore by pathname
+                              location.pathname
+                            : // everything else by location like the browser
+                              location.key;
+                    }}
+                />
                 <DataContext.Provider
                     value={{
                         data: data,
