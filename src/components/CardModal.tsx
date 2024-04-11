@@ -41,54 +41,34 @@ const CardModal = () => {
 
     return (
         <>
-            <div className="card-modal__container">
-                <div id={id} className="card-modal__img-container">
-                    <h2>{title}</h2>
-                    <img className="card-modal__img" src={imgUrl} />
-                </div>
-
+            <div className="card-modal__container container-shadow">
+                <img className="card-modal__img" src={imgUrl} />
                 <div className="card-modal__information">
+                    <div className="card-modal__title title--dark text--big text--bold">{title}</div>
+                    <div>{creation_date_latest}</div>
                     <div>
-                        <strong>Title: </strong>
-                        {title}
+                        <i>({department})</i>
                     </div>
-                    <div>
-                        <strong>Date: </strong>
-                        {creation_date_latest}
+                    <div>{accession_number}</div>
+                    <div>{technique}</div>
+                    <div>{type}</div>
+                    <div>{measurements}</div>
+                    <div className="text--dark-color">DID YOU KNOW?</div>
+                    <div>{did_you_know}</div>
+                    <div className="text--dark-color">DESCRIPTION</div>
+                    <div>{description}</div>
+                    <div className="card-modal__link-section">
+                        <Link
+                            className="card-modal__link text-link-color--blue text--medium"
+                            to={linkToArtWork}
+                            target="_blank"
+                        >
+                            DO YOU WANT MORE?{" "}
+                        </Link>
+                        <Link className="card-modal__link text-link-color--blue text--medium" to="/art-works">
+                            CLOSE
+                        </Link>
                     </div>
-                    <div>
-                        <strong>Department: </strong>
-                        {department}
-                    </div>
-                    <div>
-                        <strong>Accession Number: </strong>
-                        {accession_number}
-                    </div>
-                    <div>
-                        <strong>Technique: </strong>
-                        {technique}
-                    </div>
-                    <div>
-                        <strong>Type: </strong>
-                        {type}
-                    </div>
-                    <div>
-                        <strong>Measurements: </strong>
-                        {measurements}
-                    </div>
-                    <div>
-                        <strong>Did you know? </strong>
-                        {did_you_know}
-                    </div>
-                    <div>
-                        <strong>Description: </strong>
-                        {description}
-                    </div>
-                    <a>
-                        <strong>Do you want see this ArtWork? </strong>
-                        {linkToArtWork}
-                    </a>
-                    <Link to="/art-works">CLOSE</Link>
                 </div>
             </div>
         </>
