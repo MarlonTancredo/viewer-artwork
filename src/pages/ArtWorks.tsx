@@ -7,7 +7,6 @@ import Loading from "../components/Loading";
 import { DataContext } from "../layout/MainLayout";
 
 const ArtWorks = () => {
-    const artWorksData = useContext(DataContext);
     const dataContext = useContext(DataContext);
 
     if (dataContext?.data?.length === 0) {
@@ -30,10 +29,10 @@ const ArtWorks = () => {
         );
     }
 
-    if (artWorksData?.status === "error") {
+    if (dataContext?.status === "error") {
         return (
             <>
-                <div className="page__container page--fade-in ">{artWorksData.error}</div>
+                <div className="page__container page--fade-in ">{dataContext.error}</div>
             </>
         );
     }
@@ -42,9 +41,9 @@ const ArtWorks = () => {
         <>
             <div className="page__container page--fade-in ">
                 <main className="page__main">
-                    <Cards data={artWorksData?.data} />
-                    <div style={{ marginBottom: "3rem", marginTop: "1rem" }} ref={artWorksData?.ref}>
-                        {artWorksData?.isFetching && <Loading />}
+                    <Cards data={dataContext?.data} />
+                    <div style={{ marginBottom: "3rem", marginTop: "1rem" }} ref={dataContext?.ref}>
+                        {dataContext?.isFetching && <Loading />}
                     </div>
                 </main>
             </div>
