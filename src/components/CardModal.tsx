@@ -44,7 +44,7 @@ const CardModal = () => {
             <div className="card-modal__container container-shadow">
                 <img className="card-modal__img" src={imgUrl} />
                 <div className="card-modal__information">
-                    <div className="card-modal__title title--dark text--big text--bold">{title}</div>
+                    <div className="card-modal__title text--dark-color text--big text--bold">{title}</div>
                     <div>{creation_date_latest}</div>
                     <div>
                         <i>({department})</i>
@@ -53,9 +53,9 @@ const CardModal = () => {
                     <div>{technique}</div>
                     <div>{type}</div>
                     <div>{measurements}</div>
-                    <div className="text--dark-color">DID YOU KNOW?</div>
-                    <div>{did_you_know}</div>
-                    <div className="text--dark-color">DESCRIPTION</div>
+                    <div className="text--dark-color text--bold">DID YOU KNOW?</div>
+                    <div className="">{did_you_know}</div>
+                    <div className="text--dark-color text--bold">DESCRIPTION</div>
                     <div>{description}</div>
                     <div className="card-modal__link-section">
                         <Link
