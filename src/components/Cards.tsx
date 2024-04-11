@@ -56,7 +56,6 @@ const Cards = ({ data }: CardTypes) => {
                                         description: description,
                                         linkToArtWork: url,
                                     }}
-                                    preventScrollReset
                                 >
                                     READ MORE...
                                 </Link>
