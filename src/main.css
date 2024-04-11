@@ -10,6 +10,9 @@
     --clear-border-color: #f8f9fa;
     --link-color: #0582ca;
     --link-color-hover: #0582ca;
+    --font-size-big: 1rem;
+    --font-size-medium: 0.9rem;
+    --font-size-small: 0.8rem;
     --transition-time: 0.5s;
 }
 
