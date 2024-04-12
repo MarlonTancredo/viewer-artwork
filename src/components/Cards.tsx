@@ -41,7 +41,7 @@ const Cards = ({ data }: CardTypes) => {
                                 </div>
                                 <div className="card__read-more__section ">
                                     <Link
-                                        className="card__read-more text-link-color--blue text--medium"
+                                        className="card__read-more text-link-color--blue text--small"
                                         to="/card"
                                         state={{
                                             id: id,
