@@ -5,6 +5,7 @@
     --dark-txt-color: #212529;
     --medium-txt-color: #6d6875;
     --clear-txt-color: #f8f9fa;
+    --text-color-blue: #0582ca;
     --dark-border-color: #212529;
     --medium-border-color: #6d6875;
     --clear-border-color: #f8f9fa;
@@ -30,8 +31,7 @@ body {
     font-size: 0.9rem;
     background-color: var(--clear-bg-color);
     margin: 0;
-    letter-spacing: 1px;
-    text-align: justify;
+    letter-spacing: 0.8px;
 }
 
 p {
