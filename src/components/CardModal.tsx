@@ -1,30 +1,10 @@
 import "./styles.css";
 import { Link, useLocation } from "react-router-dom";
 
-export type Fields = {
-    id: string;
-    imgUrl: string;
-    title: string;
-    creation_date_latest: string;
-    department: string;
-    accession_number: string;
-    technique: string;
-    type: string;
-    measurements: string;
-    did_you_know: string;
-    description: string;
-    linkToArtWork: string;
-};
-
-export type Data = {
-    data: Fields | null;
-};
-
 const CardModal = () => {
     const location = useLocation();
     const {
         state: {
-            id,
             imgUrl,
             title,
             creation_date_latest,
@@ -63,8 +43,9 @@ const CardModal = () => {
                             to={linkToArtWork}
                             target="_blank"
                         >
-                            DO YOU WANT MORE?{" "}
+                            DO YOU WANT SEE MORE?
                         </Link>
+
                         <Link className="card-modal__link text-link-color--blue text--medium" to="/art-works">
                             CLOSE
                         </Link>

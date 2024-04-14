@@ -1,3 +1,12 @@
+type Data = {
+    data: Art[];
+    status: "error" | "success" | "pending";
+    error: string | undefined;
+    isFetching: boolean;
+    ref: (node?: Element | null | undefined) => void;
+    inView: boolean;
+};
+
 type Art = {
     id: string;
     title: string;
@@ -27,4 +36,4 @@ type Creator = {
     role: string;
 };
 
-export type { Art, Creator };
+export type { Art, Creator, Data };

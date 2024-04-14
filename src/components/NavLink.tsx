@@ -11,9 +11,7 @@ const NavLink = () => {
             <ul className="nav-link__container">
                 <Link
                     className={
-                        pathname === "/art-works"
-                            ? "nav-link__link nav-link__link-selected text-link-color--blue"
-                            : "nav-link__link text-link-color--blue"
+                        pathname === "/art-works" ? "nav-link__link nav-link__link-selected " : "nav-link__link "
                     }
                     to={"/art-works"}
                     preventScrollReset
@@ -22,9 +20,7 @@ const NavLink = () => {
                 </Link>
                 <Link
                     className={
-                        pathname === "/saved-arts"
-                            ? "nav-link__link nav-link__link-selected text-link-color--blue"
-                            : "nav-link__link text-link-color--blue"
+                        pathname === "/saved-arts" ? "nav-link__link nav-link__link-selected " : "nav-link__link "
                     }
                     to={"/saved-arts"}
                     preventScrollReset

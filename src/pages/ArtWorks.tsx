@@ -40,12 +40,10 @@ const ArtWorks = () => {
     return (
         <>
             <div className="page__container page--fade-in ">
-                <main className="page__main">
-                    <Cards data={dataContext?.data} />
-                    <div style={{ marginBottom: "3rem", marginTop: "1rem" }} ref={dataContext?.ref}>
-                        {dataContext?.isFetching && <Loading />}
-                    </div>
-                </main>
+                <Cards data={dataContext?.data} />
+                <div style={{ marginBottom: "3rem", marginTop: "1rem" }} ref={dataContext?.ref}>
+                    {dataContext?.isFetching && <Loading />}
+                </div>
             </div>
         </>
     );

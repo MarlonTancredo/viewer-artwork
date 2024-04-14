@@ -3,7 +3,9 @@ import "./styles.css";
 const Home = () => {
     return (
         <>
-            <h1>Home</h1>
+            <div className="page__container page--fade-in ">
+                <h1>Home</h1>
+            </div>
         </>
     );
 };

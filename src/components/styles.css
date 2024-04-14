@@ -40,12 +40,13 @@
 .text-link-color--blue {
     color: var(--link-color);
     text-decoration: none;
+    border-bottom: 1px solid var(--link-color);
 }
 
 .text-link-color--blue:hover {
     color: var(--link-color-hover);
     cursor: pointer;
-    font-size: var(--font-size-big);
+    border-bottom: 1px solid var(--link-color-hover);
 }
 
 /* HEADER */
@@ -168,10 +169,22 @@
     height: 1rem;
     padding: 0.5rem;
     transition: all var(--transition-time);
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.nav-link__link:hover {
+    color: var(--link-color-hover);
 }
 
 .nav-link__link-selected {
     border-bottom: 1px solid var(--medium-border-color);
+    color: var(--medium-border-color);
+}
+
+.nav-link__link-selected {
+    border-bottom: 1px solid var(--medium-border-color);
+    color: var(--medium-border-color);
 }
 
 /* SAVED CARD MODAL */
