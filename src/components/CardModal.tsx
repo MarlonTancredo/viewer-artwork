@@ -1,10 +1,12 @@
 import "./styles.css";
 import { Link, useLocation } from "react-router-dom";
-import { CardModalStoreContext } from "./CardModalStore";
+import { CardModalContext } from "../app/App";
 import { useContext } from "react";
+import { CardPageContext } from "../pages/CardPage";
 
 const CardModal = () => {
-    const [state, setState] = useContext(CardModalStoreContext);
+    const cardPageContext = useContext(CardPageContext);
+    const cardModalContext = useContext(CardModalContext);
 
     const location = useLocation();
     const {
@@ -22,6 +24,23 @@ const CardModal = () => {
             linkToArtWork,
         },
     } = location;
+
+    const handleSaveCard = () => {
+        cardPageContext?.setIsSaved(true);
+        cardModalContext?.setCardModalState({
+            imgUrl: imgUrl,
+            title: title,
+            creation_date_latest: creation_date_latest,
+            department: department,
+            accession_number: accession_number,
+            technique: technique,
+            type: type,
+            measurements: measurements,
+            did_you_know: did_you_know,
+            description: description,
+            linkToArtWork: linkToArtWork,
+        });
+    };
 
     return (
         <>
@@ -53,25 +72,7 @@ const CardModal = () => {
                         <Link className="card-modal__link text-link-color--blue text--medium" to="/art-works">
                             CLOSE
                         </Link>
-                        <button
-                            onClick={() =>
-                                setState({
-                                    imgUrl: imgUrl,
-                                    title: title,
-                                    creation_date_latest: creation_date_latest,
-                                    department: department,
-                                    accession_number: accession_number,
-                                    technique: technique,
-                                    type: type,
-                                    measurements: measurements,
-                                    did_you_know: did_you_know,
-                                    description: description,
-                                    linkToArtWork: linkToArtWork,
-                                })
-                            }
-                        >
-                            Save
-                        </button>
+                        <button onClick={handleSaveCard}>Save</button>
                     </div>
                 </div>
             </div>
