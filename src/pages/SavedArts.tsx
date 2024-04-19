@@ -1,15 +1,15 @@
 import "./styles.css";
 import { useContext } from "react";
-import { CardModalStoreContext } from "../components/CardModalStore";
+import { CardModalContext } from "../app/App";
 
 const SavedArts = () => {
-    const [state, setState] = useContext(CardModalStoreContext);
+    const cardModalContext = useContext(CardModalContext);
 
     return (
         <>
             <div className="page__container page--fade-in">
-                <h2>{state.title}</h2>
-                <img src={state.imgUrl} alt={state.title} />
+                <h2>{cardModalContext?.cardModalState.title}</h2>
+                <img src={cardModalContext?.cardModalState.imgUrl} alt={cardModalContext?.cardModalState.title} />
             </div>
         </>
     );
