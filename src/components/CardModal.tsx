@@ -1,7 +1,11 @@
 import "./styles.css";
 import { Link, useLocation } from "react-router-dom";
+import { CardModalStoreContext } from "./CardModalStore";
+import { useContext } from "react";
 
 const CardModal = () => {
+    const [state, setState] = useContext(CardModalStoreContext);
+
     const location = useLocation();
     const {
         state: {
@@ -49,6 +53,25 @@ const CardModal = () => {
                         <Link className="card-modal__link text-link-color--blue text--medium" to="/art-works">
                             CLOSE
                         </Link>
+                        <button
+                            onClick={() =>
+                                setState({
+                                    imgUrl: imgUrl,
+                                    title: title,
+                                    creation_date_latest: creation_date_latest,
+                                    department: department,
+                                    accession_number: accession_number,
+                                    technique: technique,
+                                    type: type,
+                                    measurements: measurements,
+                                    did_you_know: did_you_know,
+                                    description: description,
+                                    linkToArtWork: linkToArtWork,
+                                })
+                            }
+                        >
+                            Save
+                        </button>
                     </div>
                 </div>
             </div>

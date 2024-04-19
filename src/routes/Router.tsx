@@ -1,4 +1,4 @@
-import { createBrowserRouter, createRoutesFromElements, Route, Routes, ScrollRestoration } from "react-router-dom";
+import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
 
 import PageNotFound from "../pages/PageNotFound";
 import Home from "../pages/ArtWorks";
