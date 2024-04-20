@@ -3,6 +3,7 @@ import { router } from "../routes/Router";
 import { createContext, useState } from "react";
 
 type InitialState = {
+    id: string;
     imgUrl: string;
     title: string;
     creation_date_latest: string;
@@ -16,23 +17,11 @@ type InitialState = {
     linkToArtWork: string;
 };
 
-const initialState = {
-    imgUrl: "",
-    title: "",
-    creation_date_latest: "",
-    department: "",
-    accession_number: "",
-    technique: "",
-    type: "",
-    measurements: "",
-    did_you_know: "",
-    description: "",
-    linkToArtWork: "",
-};
+const initialState: InitialState[] = [];
 
 export const CardModalContext = createContext<{
-    cardModalState: InitialState;
-    setCardModalState: React.Dispatch<React.SetStateAction<InitialState>>;
+    cardModalState: InitialState[];
+    setCardModalState: React.Dispatch<React.SetStateAction<InitialState[]>>;
 } | null>(null);
 
 const App = () => {
