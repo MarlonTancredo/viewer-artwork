@@ -27,7 +27,13 @@ const CardModal = () => {
     } = location;
 
     const handleSaveCard = () => {
-        cardPageContext?.setIsSaved(true);
+        const idFoundInTheArray = cardModalContext?.cardModalState.find((element) => element.id === id);
+        if (idFoundInTheArray) {
+            cardPageContext?.setIsSaved({ message: "This artwork is already saved!", triggered: true });
+            return;
+        }
+
+        cardPageContext?.setIsSaved({ message: "Saved!", triggered: true });
 
         cardModalContext?.setCardModalState([
             ...cardModalContext?.cardModalState,
@@ -78,8 +84,11 @@ const CardModal = () => {
                         <Link className="card-modal__link text-link-color--blue text--medium" to="/art-works">
                             CLOSE
                         </Link>
-                        <button className="card-modal__save-button" onClick={handleSaveCard}>
-                            Save
+                        <button
+                            className="card-modal__save-artwork save-artwork--bg-color save-artwork--text-color"
+                            onClick={handleSaveCard}
+                        >
+                            Save Artwork
                         </button>
                     </div>
                 </div>
