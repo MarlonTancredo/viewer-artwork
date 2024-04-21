@@ -10,12 +10,9 @@ const SavedArts = () => {
             return;
         }
 
-        const newArray = cardModalContext?.cardModalState;
-        const found = cardModalContext?.cardModalState.findIndex((element) => element.id === id);
+        const newArray = cardModalContext?.cardModalState.filter((element) => element.id !== id);
 
-        console.log(found);
-        console.log(newArray?.splice(found, 1));
-        console.log(newArray);
+        cardModalContext.setCardModalState(newArray);
     };
 
     return (
