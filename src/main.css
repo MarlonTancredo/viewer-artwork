@@ -2,10 +2,15 @@
     --dark-bg-color: #212529;
     --medium-bg-color: #6d6875;
     --clear-bg-color: #f8f9fa;
+    --red-bg-color: #c1121f;
+    --green-bg-color: #57cc99;
     --dark-txt-color: #212529;
     --medium-txt-color: #6d6875;
     --clear-txt-color: #f8f9fa;
     --text-color-blue: #0582ca;
+    --text-color-red: #c1121f;
+    --red-bg-color-hoover: #d62828;
+    --green-bg-color-hoover: #80ed99;
     --dark-border-color: #212529;
     --medium-border-color: #6d6875;
     --clear-border-color: #f8f9fa;
