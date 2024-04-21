@@ -1,11 +1,17 @@
-type IsSavedClicked = {
-    isModalActive: boolean;
-};
+import { useContext } from "react";
+import { CardPageContext } from "../pages/CardPage";
 
-const SavedCardModal = ({ isModalActive }: IsSavedClicked) => {
+const SavedCardModal = () => {
+    const cardPageContext = useContext(CardPageContext);
     return (
         <>
-            <div className={isModalActive ? "saved-card-modal__container" : "saved-card-modal--hidden"}>Saved!</div>
+            <div
+                className={
+                    cardPageContext?.isSaved.triggered ? "saved-card-modal__container" : "saved-card-modal--hidden"
+                }
+            >
+                {cardPageContext?.isSaved.message}
+            </div>
         </>
     );
 };
