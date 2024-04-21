@@ -239,6 +239,10 @@
     transition: all var(--transition-time);
 }
 
+.card-modal__save-button {
+    padding: 0.5rem;
+}
+
 /* MEDIA QUERIES */
 @media screen and (max-width: 1700px) {
     .card__body {

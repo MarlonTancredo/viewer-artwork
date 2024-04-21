@@ -11,6 +11,7 @@ const CardModal = () => {
     const location = useLocation();
     const {
         state: {
+            id,
             imgUrl,
             title,
             creation_date_latest,
@@ -27,19 +28,24 @@ const CardModal = () => {
 
     const handleSaveCard = () => {
         cardPageContext?.setIsSaved(true);
-        cardModalContext?.setCardModalState({
-            imgUrl: imgUrl,
-            title: title,
-            creation_date_latest: creation_date_latest,
-            department: department,
-            accession_number: accession_number,
-            technique: technique,
-            type: type,
-            measurements: measurements,
-            did_you_know: did_you_know,
-            description: description,
-            linkToArtWork: linkToArtWork,
-        });
+
+        cardModalContext?.setCardModalState([
+            ...cardModalContext?.cardModalState,
+            {
+                id: id,
+                imgUrl: imgUrl,
+                title: title,
+                creation_date_latest: creation_date_latest,
+                department: department,
+                accession_number: accession_number,
+                technique: technique,
+                type: type,
+                measurements: measurements,
+                did_you_know: did_you_know,
+                description: description,
+                linkToArtWork: linkToArtWork,
+            },
+        ]);
     };
 
     return (
@@ -72,7 +78,9 @@ const CardModal = () => {
                         <Link className="card-modal__link text-link-color--blue text--medium" to="/art-works">
                             CLOSE
                         </Link>
-                        <button onClick={handleSaveCard}>Save</button>
+                        <button className="card-modal__save-button" onClick={handleSaveCard}>
+                            Save
+                        </button>
                     </div>
                 </div>
             </div>

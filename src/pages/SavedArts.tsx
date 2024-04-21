@@ -5,13 +5,40 @@ import { CardModalContext } from "../app/App";
 const SavedArts = () => {
     const cardModalContext = useContext(CardModalContext);
 
+    const handleRemoveButton = (id: string) => {
+        if (cardModalContext?.cardModalState === undefined) {
+            return;
+        }
+
+        const newArray = cardModalContext?.cardModalState;
+        const found = cardModalContext?.cardModalState.findIndex((element) => element.id === id);
+
+        console.log(found);
+        console.log(newArray?.splice(found, 1));
+        console.log(newArray);
+    };
+
     return (
-        <>
-            <div className="page__container page--fade-in">
-                <h2>{cardModalContext?.cardModalState.title}</h2>
-                <img src={cardModalContext?.cardModalState.imgUrl} alt={cardModalContext?.cardModalState.title} />
-            </div>
-        </>
+        <div className="page__container page--fade-in">
+            {cardModalContext?.cardModalState.map((artwork) => {
+                return (
+                    <div
+                        key={artwork.id}
+                        style={{
+                            width: "80vw",
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
+                            justifyContent: "center",
+                        }}
+                    >
+                        <h2>{artwork.title}</h2>
+                        <img src={artwork.imgUrl} alt={artwork.title} style={{ width: "80vw" }} />
+                        <button onClick={() => handleRemoveButton(artwork.id)}>Remove Artwork</button>
+                    </div>
+                );
+            })}
+        </div>
     );
 };
 
