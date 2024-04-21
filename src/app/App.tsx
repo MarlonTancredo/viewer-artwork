@@ -1,5 +1,5 @@
 import { RouterProvider } from "react-router-dom";
-import { router } from "../routes/router";
+import { router } from "../routes/Router";
 import { createContext, useState } from "react";
 
 type InitialState = {
