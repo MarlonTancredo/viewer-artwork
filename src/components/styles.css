@@ -239,8 +239,24 @@
     transition: all var(--transition-time);
 }
 
-.card-modal__save-button {
+.card-modal__save-artwork {
     padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    transition: all var(--transition-time);
+}
+
+.save-artwork--bg-color {
+    background-color: var(--green-bg-color);
+}
+
+.save-artwork--text-color {
+    color: var(--clear-txt-color);
+}
+
+.card-modal__save-artwork:hover {
+    cursor: pointer;
+    background-color: var(--green-bg-color-hoover);
 }
 
 /* MEDIA QUERIES */
