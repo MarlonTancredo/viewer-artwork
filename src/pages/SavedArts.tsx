@@ -11,7 +11,6 @@ const SavedArts = () => {
         }
 
         const newArray = cardModalContext?.cardModalState.filter((element) => element.id !== id);
-
         cardModalContext.setCardModalState(newArray);
     };
 
@@ -19,19 +18,15 @@ const SavedArts = () => {
         <div className="page__container page--fade-in">
             {cardModalContext?.cardModalState.map((artwork) => {
                 return (
-                    <div
-                        key={artwork.id}
-                        style={{
-                            width: "80vw",
-                            display: "flex",
-                            flexDirection: "column",
-                            alignItems: "center",
-                            justifyContent: "center",
-                        }}
-                    >
+                    <div key={artwork.id} className="saved-arts__container container-shadow">
                         <h2>{artwork.title}</h2>
                         <img src={artwork.imgUrl} alt={artwork.title} style={{ width: "80vw" }} />
-                        <button onClick={() => handleRemoveButton(artwork.id)}>Remove Artwork</button>
+                        <button
+                            className="saved-arts__remove-artwork remove-artwork--bg-color remove-artwork--text-color"
+                            onClick={() => handleRemoveButton(artwork.id)}
+                        >
+                            Remove Artwork
+                        </button>
                     </div>
                 );
             })}
