@@ -4,18 +4,18 @@ import SavedCardModal from "../components/SavedCardModal";
 import { createContext, useState } from "react";
 
 export const CardPageContext = createContext<{
-    isSaved: boolean;
-    setIsSaved: React.Dispatch<React.SetStateAction<boolean>>;
+    isSaved: { message: string; triggered: boolean };
+    setIsSaved: React.Dispatch<React.SetStateAction<{ message: string; triggered: boolean }>>;
 } | null>(null);
 
 const CardPage = () => {
-    const [isSaved, setIsSaved] = useState(false);
+    const [isSaved, setIsSaved] = useState({ message: "", triggered: false });
 
     return (
         <>
             <div className="page__container page--fade-in ">
-                <SavedCardModal isModalActive={isSaved} />
                 <CardPageContext.Provider value={{ isSaved, setIsSaved }}>
+                    <SavedCardModal />
                     <CardModal />
                 </CardPageContext.Provider>
             </div>
