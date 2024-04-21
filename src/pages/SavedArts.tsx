@@ -14,6 +14,14 @@ const SavedArts = () => {
         cardModalContext.setCardModalState(newArray);
     };
 
+    if (cardModalContext?.cardModalState.length === 0) {
+        return (
+            <div className="page__container page--fade-in">
+                <h1>No saved Artworks!</h1>
+            </div>
+        );
+    }
+
     return (
         <div className="page__container page--fade-in">
             {cardModalContext?.cardModalState.map((artwork) => {
