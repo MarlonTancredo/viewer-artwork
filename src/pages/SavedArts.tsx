@@ -27,8 +27,14 @@ const SavedArts = () => {
             {cardModalContext?.cardModalState.map((artwork) => {
                 return (
                     <div key={artwork.id} className="saved-arts__container container-shadow">
-                        <h2>{artwork.title}</h2>
-                        <img src={artwork.imgUrl} alt={artwork.title} style={{ width: "80vw" }} />
+                        <img
+                            src={artwork.imgUrl}
+                            alt={artwork.title}
+                            style={{ width: "80vw", borderTopLeftRadius: "20px", borderTopRightRadius: "20px" }}
+                        />
+                        <div className="text--dark-color text--big text--bold" style={{ padding: "0.5rem" }}>
+                            {artwork.title}
+                        </div>
                         <button
                             className="saved-arts__remove-artwork remove-artwork--bg-color remove-artwork--text-color"
                             onClick={() => handleRemoveButton(artwork.id)}
