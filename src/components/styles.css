@@ -5,50 +5,6 @@
         0 6px 20px 0 #00000030;
 }
 
-.text--dark-color {
-    color: var(--dark-txt-color);
-}
-
-.text--medium-color {
-    color: var(--medium-txt-color);
-}
-
-.text--clear-color {
-    color: var(--clear-txt-color);
-}
-
-.text--color-blue {
-    color: var(text-color-blue);
-}
-
-.text--bold {
-    font-weight: bold;
-}
-
-.text--big {
-    font-size: var(--font-size-big);
-}
-
-.text--medium {
-    font-size: var(--font-size-medium);
-}
-
-.text--small {
-    font-size: var(--font-size-small);
-}
-
-.text-link-color--blue {
-    color: var(--link-color);
-    text-decoration: none;
-    border-bottom: 1px solid var(--link-color);
-}
-
-.text-link-color--blue:hover {
-    color: var(--link-color-hover);
-    cursor: pointer;
-    border-bottom: 1px solid var(--link-color-hover);
-}
-
 /* HEADER */
 .header__container {
     display: flex;
