@@ -11,7 +11,7 @@
 
 ## API:
 
--   This project consume data from a FREE API called `Cleveland Art API` to render the cards and components.
+-   This project consume data from a `FREE API` called `Cleveland Art API` to render the cards and components.
 -   Link to the api documentation used to build this project: [Cleveland Art documentation](https://openaccess-api.clevelandart.org/)
 
 Api request example:
@@ -85,7 +85,7 @@ Transformations in Cleveland Art. (CMA, 1996), p. 238",
 
 ## Where this project is hosted?
 
--   This project it's hosted on `Netlify` using a free plan and it can be accessed by clicking here: [viewer-artwork.netlify.app](https://viewer-artwork.netlify.app/)
+-   This project it's hosted on `Netlify` using a `FREE PLAN` and linked to project repo on `GitHub`, so any new commit will reflect on the website. Project can be accessed by clicking here: [viewer-artwork.netlify.app](https://viewer-artwork.netlify.app/).
 -   For more information about netlify click here: [Netlify documentation](https://docs.netlify.com/)
 
 ## Dependencies:
