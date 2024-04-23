@@ -2,23 +2,17 @@
 
 ## Step by step to run this project locally:
 
--   Download git by clicking here: [Git](https://git-scm.com/download/win) and follow the steps for installation.
-
--   Install Node following the steps by clicking here: [NodeJS](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
-
--   Install Yarn package manager following the steps by clicking here: [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable).
-
--   Once Git, Node and Yarn package manager has been installed open your terminal and run the command `git clone https://github.com/MarlonTancredo/viewer-artwork.git` to clone this repository.
-
+-   Download `Git` by clicking here: [Git](https://git-scm.com/download/win) and follow the steps for installation.
+-   Install `Node` following the steps by clicking here: [NodeJS documentation](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
+-   Install `Yarn package manager` following the steps by clicking here: [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable).
+-   Once `Git`, `Node` and `Yarn package manager` has been installed open your terminal and run the command `git clone https://github.com/MarlonTancredo/viewer-artwork.git` to clone this repository.
 -   Go inside the project folder and install the project dependencies running `yarn` command.
-
 -   After all dependencies has been installed run the command `yarn dev` to run the project locally.
 
 ## API:
 
 -   This project consume data from `Cleveland Art API` to render the cards and components.
-
--   Link to the api documentation used to build this project: [Cleveland Art](https://openaccess-api.clevelandart.org/)
+-   Link to the api documentation used to build this project: [Cleveland Art documentation](https://openaccess-api.clevelandart.org/)
 
 Api request example:
 
@@ -92,10 +86,16 @@ Transformations in Cleveland Art. (CMA, 1996), p. 238",
 ## Where this project is hosted?
 
 -   This project it's hosted on `Netlify` using a free plan and it can be accessed by clicking here: [viewer-artwork.netlify.app](https://viewer-artwork.netlify.app/)
+-   For more information about netlify click here: [Netlify documentation](https://docs.netlify.com/)
 
--   For more information about netlify click here: [Netlify](https://docs.netlify.com/)
+## Dependencies:
 
-## Expanding the ESLint configuration
+-   `@tanstack/react-query` - Hooks for managing, caching and syncing asynchronous and remote data in React [React Query](https://tanstack.com/query/latest)
+-   `react-intersection-observer` - Monitor if a component is inside the viewport, using IntersectionObserver API [React Observer documentation](https://github.com/thebuilder/react-intersection-observer#readme)
+-   `react-router-dom` - Declarative routing for React web applications [React Router Dom](https://github.com/remix-run/react-router#readme)
+-   `react-spinners` - A collection of react loading spinners [React Spinners](https://www.davidhu.io/react-spinners/)
+
+## Expanding the ESLint configuration:
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
