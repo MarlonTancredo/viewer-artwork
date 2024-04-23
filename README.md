@@ -1,12 +1,30 @@
-# React + TypeScript + Vite
+# [Viewer Artwork](https://viewer-artwork.netlify.app/) - React - TypeScript - Vite
 
-## See this project online on: [viewer-artwork](https://viewer-artwork.netlify.app/)
+## Step by Step to run this project locally.
 
-## Go inside the project folder and install the project dependencies running `yarn` or `npm install` command.
+-   Download git by clicking here: [Git](https://git-scm.com/download/win) and follow the steps for installation.
 
-## Test using `yarn test`
+-   Install Node following the steps by clicking here: [NodeJS](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
 
-## Run the project locally `yarn dev`
+-   Install Yarn package manager following the steps by clicking here: [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable).
+
+-   Once Git, Node and Yarn package manager has been installed open your terminal and run the command `git clone https://github.com/MarlonTancredo/viewer-artwork.git` to clone this repository.
+
+-   Go inside the project folder and install the project dependencies running `yarn` command.
+
+-   After all dependencies has been installed run the command `yarn dev` to run the project locally.
+
+## API
+
+-   This project consume data from `Cleveland Art API` to render the cards and components.
+
+-   Link to the api documentation used to build this project: [Cleveland Art](https://openaccess-api.clevelandart.org/)
+
+## Where this project is hosted?
+
+-   This project it's hosted on Netlify using a free plan and it can be accessed by clicking here: [viewer-artwork.netlify.app](https://viewer-artwork.netlify.app/)
+
+-   For more information about netlify click here: [Netlify](https://docs.netlify.com/)
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
