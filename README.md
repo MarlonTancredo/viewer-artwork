@@ -11,7 +11,7 @@
 
 ## API:
 
--   This project consume data from `Cleveland Art API` to render the cards and components.
+-   This project consume data from a FREE API called `Cleveland Art API` to render the cards and components.
 -   Link to the api documentation used to build this project: [Cleveland Art documentation](https://openaccess-api.clevelandart.org/)
 
 Api request example:
