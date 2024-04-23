@@ -1,6 +1,6 @@
 # [Viewer Artwork](https://viewer-artwork.netlify.app/) - React - TypeScript - Vite
 
-## Step by Step to run this project locally:
+## Step by step to run this project locally:
 
 -   Download git by clicking here: [Git](https://git-scm.com/download/win) and follow the steps for installation.
 
@@ -24,7 +24,7 @@ Api request example:
 
 ```js
 const response = await fetch(
-    `"https://openaccess-api.clevelandart.org/api/creators/?name=smith&birth_year_after=1900&limit=1&indent=1"`,
+    "https://openaccess-api.clevelandart.org/api/creators/?name=smith&birth_year_after=1900&limit=1&indent=1",
 );
 const data = await response.json();
 ```
@@ -95,14 +95,14 @@ Transformations in Cleveland Art. (CMA, 1996), p. 238",
 
 -   For more information about netlify click here: [Netlify](https://docs.netlify.com/)
 
+## Expanding the ESLint configuration
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
 
 -   [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 -   [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
