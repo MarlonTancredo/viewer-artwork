@@ -91,7 +91,7 @@ Transformations in Cleveland Art. (CMA, 1996), p. 238",
 
 ## Where this project is hosted?
 
--   This project it's hosted on Netlify using a free plan and it can be accessed by clicking here: [viewer-artwork.netlify.app](https://viewer-artwork.netlify.app/)
+-   This project it's hosted on `Netlify` using a free plan and it can be accessed by clicking here: [viewer-artwork.netlify.app](https://viewer-artwork.netlify.app/)
 
 -   For more information about netlify click here: [Netlify](https://docs.netlify.com/)
 
