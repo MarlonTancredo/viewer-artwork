@@ -4,12 +4,12 @@ import SavedCardModal from "../components/SavedCardModal";
 import { createContext, useState } from "react";
 
 export const CardPageContext = createContext<{
-    isSaved: { message: string; triggered: boolean };
-    setIsSaved: React.Dispatch<React.SetStateAction<{ message: string; triggered: boolean }>>;
+    isSaved: { message: string; isTriggered: boolean };
+    setIsSaved: React.Dispatch<React.SetStateAction<{ message: string; isTriggered: boolean }>>;
 } | null>(null);
 
 const CardPage = () => {
-    const [isSaved, setIsSaved] = useState({ message: "", triggered: false });
+    const [isSaved, setIsSaved] = useState({ message: "", isTriggered: false });
 
     return (
         <>

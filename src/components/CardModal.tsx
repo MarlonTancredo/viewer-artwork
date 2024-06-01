@@ -29,11 +29,11 @@ const CardModal = () => {
     const handleSaveCard = () => {
         const idFoundInTheArray = cardModalContext?.cardModalState.find((element) => element.id === id);
         if (idFoundInTheArray) {
-            cardPageContext?.setIsSaved({ message: "This artwork is already saved!", triggered: true });
+            cardPageContext?.setIsSaved({ message: "This artwork is already saved!", isTriggered: true });
             return;
         }
 
-        cardPageContext?.setIsSaved({ message: "Saved!", triggered: true });
+        cardPageContext?.setIsSaved({ message: "Saved!", isTriggered: true });
 
         cardModalContext?.setCardModalState([
             ...cardModalContext?.cardModalState,
