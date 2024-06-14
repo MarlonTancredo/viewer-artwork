@@ -7,7 +7,7 @@ const SavedCardModal = () => {
         <>
             <div
                 className={
-                    cardPageContext?.isSaved.triggered ? "saved-card-modal__container" : "saved-card-modal--hidden"
+                    cardPageContext?.isSaved.isTriggered ? "saved-card-modal__container" : "saved-card-modal--hidden"
                 }
             >
                 {cardPageContext?.isSaved.message}
