@@ -1,7 +1,7 @@
 import "./styles.css";
 
 import { useContext } from "react";
-import Cards from "../components/Cards";
+import Cards from "../components/Card";
 import Loading from "../components/Loading";
 
 import { DataContext } from "../layout/MainLayout";
